@@ -28,9 +28,10 @@ Project File Date:  03/07/2018
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'E:\Program Files\Keil5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 compiling main.c...
-linking...
-Program Size: Code=436 RO-data=444 RW-data=0 ZI-data=1632  
-".\Objects\241_MCU_Code.axf" - 0 Error(s), 0 Warning(s).
+main.c(3): error:  #5: cannot open source input file "mbed.h": No such file or directory
+  #include "mbed.h"
+main.c: 0 warnings, 1 error
+".\Objects\241_MCU_Code.axf" - 1 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,13 +55,14 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:2.6.0
-      Source file:   MDK\Device\Source\ARM\STM32F42xxx_43xxx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F42xxx_43xxx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f429xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 
    * Component: ARM::CMSIS:CORE:5.0.2
+Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
