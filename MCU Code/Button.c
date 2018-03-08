@@ -7,9 +7,6 @@ void BUTTONT_Initalise(void)
 {
 	PLL_Config();
 	SystemCoreClockUpdate();
-		
-
-	
 	
 		//ENABLE PORT
 	RCC->AHB1ENR|=RCC_AHB1ENR_GPIOCEN;		//GPIO C clock enable
