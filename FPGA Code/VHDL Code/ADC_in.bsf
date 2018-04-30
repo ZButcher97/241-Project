@@ -41,15 +41,22 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
+		(text "enable" (rect 0 0 24 12)(font "Arial" ))
+		(text "enable" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "ADC_in[11..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "ADC_in[11..0]" (rect 21 59 77 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "ADC_in[11..0]" (rect 21 75 77 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 224 32)
 		(output)
-		(text "ADC_out[11..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "ADC_out[11..0]" (rect 141 27 203 39)(font "Arial" ))
+		(text "ADC_out[15..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "ADC_out[15..0]" (rect 140 27 203 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing

@@ -4,6 +4,18 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "Y[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[12]",
+					"strict" : false
+				},
+				{
 					"name" : "Y[11]",
 					"strict" : false
 				},
@@ -52,15 +64,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[11]",
-					"strict" : false
-				},
-				{
 					"name" : "CLK",
 					"strict" : false
 				},
 				{
 					"name" : "RESET",
+					"strict" : false
+				},
+				{
+					"name" : "USER_BUTTON",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[11]",
 					"strict" : false
 				},
 				{

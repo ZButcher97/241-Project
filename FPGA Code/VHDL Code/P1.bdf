@@ -54,9 +54,25 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 48 192 224 208)
+	(rect 48 208 224 224)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "ADC_IN[11..0]" (rect 9 0 82 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 48 192 224 208)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "USER_BUTTON" (rect 9 0 89 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 92 12)(pt 117 12))
@@ -72,7 +88,7 @@ agreement for further details.
 	(output)
 	(rect 528 104 704 120)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "Y[11..0]" (rect 90 0 130 12)(font "Arial" ))
+	(text "Y[15..0]" (rect 90 0 130 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -87,7 +103,7 @@ agreement for further details.
 (symbol
 	(rect 248 136 472 248)
 	(text "ADC_in" (rect 5 0 42 12)(font "Arial" ))
-	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -105,15 +121,22 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
+		(text "enable" (rect 0 0 31 12)(font "Arial" ))
+		(text "enable" (rect 21 59 52 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "ADC_in[11..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "ADC_in[11..0]" (rect 21 59 90 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
+		(text "ADC_in[11..0]" (rect 21 75 90 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 224 32)
 		(output)
-		(text "ADC_out[11..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "ADC_out[11..0]" (rect 139 27 203 39)(font "Arial" ))
+		(text "ADC_out[15..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "ADC_out[15..0]" (rect 139 27 203 39)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing
@@ -129,11 +152,6 @@ agreement for further details.
 	(pt 248 184)
 )
 (connector
-	(pt 224 200)
-	(pt 248 200)
-	(bus)
-)
-(connector
 	(pt 472 168)
 	(pt 504 168)
 	(bus)
@@ -147,4 +165,13 @@ agreement for further details.
 	(pt 504 112)
 	(pt 528 112)
 	(bus)
+)
+(connector
+	(pt 248 216)
+	(pt 224 216)
+	(bus)
+)
+(connector
+	(pt 248 200)
+	(pt 224 200)
 )
