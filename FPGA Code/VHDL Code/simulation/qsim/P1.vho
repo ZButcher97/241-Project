@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition"
 
--- DATE "04/30/2018 12:21:09"
+-- DATE "04/30/2018 12:44:32"
 
 -- 
 -- Device: Altera EP4CE22F17C6 Package FBGA256
@@ -88,24 +88,24 @@ END P1;
 
 -- Design Ports Information
 -- Y[11]	=>  Location: PIN_P3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Y[10]	=>  Location: PIN_G15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Y[10]	=>  Location: PIN_F14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[9]	=>  Location: PIN_F15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[8]	=>  Location: PIN_G16,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[7]	=>  Location: PIN_K15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[6]	=>  Location: PIN_R16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Y[5]	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Y[5]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[4]	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Y[3]	=>  Location: PIN_L15,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- Y[2]	=>  Location: PIN_T2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Y[3]	=>  Location: PIN_L16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- Y[2]	=>  Location: PIN_T3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[1]	=>  Location: PIN_C9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- Y[0]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ADC_IN[11]	=>  Location: PIN_N3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLK	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- RESET	=>  Location: PIN_M2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ADC_IN[10]	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ADC_IN[10]	=>  Location: PIN_G15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ADC_IN[9]	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ADC_IN[8]	=>  Location: PIN_F14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ADC_IN[7]	=>  Location: PIN_L16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ADC_IN[8]	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ADC_IN[7]	=>  Location: PIN_L15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ADC_IN[6]	=>  Location: PIN_L14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ADC_IN[5]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- ADC_IN[4]	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -150,10 +150,10 @@ SIGNAL \inst1|ADC_out[11]~feeder_combout\ : std_logic;
 SIGNAL \RESET~input_o\ : std_logic;
 SIGNAL \RESET~inputclkctrl_outclk\ : std_logic;
 SIGNAL \ADC_IN[10]~input_o\ : std_logic;
-SIGNAL \inst1|ADC_out[10]~feeder_combout\ : std_logic;
 SIGNAL \ADC_IN[9]~input_o\ : std_logic;
-SIGNAL \inst1|ADC_out[9]~feeder_combout\ : std_logic;
+SIGNAL \inst1|ADC_out[9]~0_combout\ : std_logic;
 SIGNAL \ADC_IN[8]~input_o\ : std_logic;
+SIGNAL \inst1|ADC_out[8]~1_combout\ : std_logic;
 SIGNAL \ADC_IN[7]~input_o\ : std_logic;
 SIGNAL \ADC_IN[6]~input_o\ : std_logic;
 SIGNAL \inst1|ADC_out[6]~feeder_combout\ : std_logic;
@@ -170,6 +170,7 @@ SIGNAL \ADC_IN[0]~input_o\ : std_logic;
 SIGNAL \inst1|ADC_out[0]~feeder_combout\ : std_logic;
 SIGNAL \inst1|ADC_out\ : std_logic_vector(11 DOWNTO 0);
 SIGNAL \ALT_INV_RESET~inputclkctrl_outclk\ : std_logic;
+SIGNAL \inst1|ALT_INV_ADC_out\ : std_logic_vector(9 DOWNTO 8);
 
 COMPONENT hard_block
     PORT (
@@ -192,6 +193,8 @@ ww_devpor <= devpor;
 
 \CLK~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \CLK~input_o\);
 \ALT_INV_RESET~inputclkctrl_outclk\ <= NOT \RESET~inputclkctrl_outclk\;
+\inst1|ALT_INV_ADC_out\(8) <= NOT \inst1|ADC_out\(8);
+\inst1|ALT_INV_ADC_out\(9) <= NOT \inst1|ADC_out\(9);
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
@@ -210,7 +213,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Y[11]~output_o\);
 
--- Location: IOOBUF_X53_Y20_N16
+-- Location: IOOBUF_X53_Y24_N23
 \Y[10]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -230,7 +233,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst1|ADC_out\(9),
+	i => \inst1|ALT_INV_ADC_out\(9),
 	devoe => ww_devoe,
 	o => \Y[9]~output_o\);
 
@@ -242,7 +245,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst1|ADC_out\(8),
+	i => \inst1|ALT_INV_ADC_out\(8),
 	devoe => ww_devoe,
 	o => \Y[8]~output_o\);
 
@@ -270,7 +273,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Y[6]~output_o\);
 
--- Location: IOOBUF_X43_Y34_N16
+-- Location: IOOBUF_X38_Y34_N16
 \Y[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -294,7 +297,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Y[4]~output_o\);
 
--- Location: IOOBUF_X53_Y11_N2
+-- Location: IOOBUF_X53_Y11_N9
 \Y[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -306,7 +309,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Y[3]~output_o\);
 
--- Location: IOOBUF_X3_Y0_N2
+-- Location: IOOBUF_X1_Y0_N2
 \Y[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -430,7 +433,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	q => \inst1|ADC_out\(11));
 
--- Location: IOIBUF_X53_Y21_N22
+-- Location: IOIBUF_X53_Y20_N15
 \ADC_IN[10]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -441,21 +444,7 @@ PORT MAP (
 	i => ww_ADC_IN(10),
 	o => \ADC_IN[10]~input_o\);
 
--- Location: LCCOMB_X52_Y21_N8
-\inst1|ADC_out[10]~feeder\ : cycloneive_lcell_comb
--- Equation(s):
--- \inst1|ADC_out[10]~feeder_combout\ = \ADC_IN[10]~input_o\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \ADC_IN[10]~input_o\,
-	combout => \inst1|ADC_out[10]~feeder_combout\);
-
--- Location: FF_X52_Y21_N9
+-- Location: FF_X52_Y21_N17
 \inst1|ADC_out[10]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -464,8 +453,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	d => \inst1|ADC_out[10]~feeder_combout\,
+	asdata => \ADC_IN[10]~input_o\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst1|ADC_out\(10));
@@ -482,18 +472,18 @@ PORT MAP (
 	o => \ADC_IN[9]~input_o\);
 
 -- Location: LCCOMB_X52_Y22_N24
-\inst1|ADC_out[9]~feeder\ : cycloneive_lcell_comb
+\inst1|ADC_out[9]~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst1|ADC_out[9]~feeder_combout\ = \ADC_IN[9]~input_o\
+-- \inst1|ADC_out[9]~0_combout\ = !\ADC_IN[9]~input_o\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111111100000000",
+	lut_mask => "0000000011111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datad => \ADC_IN[9]~input_o\,
-	combout => \inst1|ADC_out[9]~feeder_combout\);
+	combout => \inst1|ADC_out[9]~0_combout\);
 
 -- Location: FF_X52_Y22_N25
 \inst1|ADC_out[9]\ : dffeas
@@ -504,13 +494,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	d => \inst1|ADC_out[9]~feeder_combout\,
+	d => \inst1|ADC_out[9]~0_combout\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst1|ADC_out\(9));
 
--- Location: IOIBUF_X53_Y24_N22
+-- Location: IOIBUF_X53_Y21_N22
 \ADC_IN[8]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -521,6 +511,20 @@ PORT MAP (
 	i => ww_ADC_IN(8),
 	o => \ADC_IN[8]~input_o\);
 
+-- Location: LCCOMB_X52_Y21_N2
+\inst1|ADC_out[8]~1\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \inst1|ADC_out[8]~1_combout\ = !\ADC_IN[8]~input_o\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \ADC_IN[8]~input_o\,
+	combout => \inst1|ADC_out[8]~1_combout\);
+
 -- Location: FF_X52_Y21_N3
 \inst1|ADC_out[8]\ : dffeas
 -- pragma translate_off
@@ -530,14 +534,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~inputclkctrl_outclk\,
-	asdata => \ADC_IN[8]~input_o\,
+	d => \inst1|ADC_out[8]~1_combout\,
 	clrn => \ALT_INV_RESET~inputclkctrl_outclk\,
-	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \inst1|ADC_out\(8));
 
--- Location: IOIBUF_X53_Y11_N8
+-- Location: IOIBUF_X53_Y11_N1
 \ADC_IN[7]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -548,7 +551,7 @@ PORT MAP (
 	i => ww_ADC_IN(7),
 	o => \ADC_IN[7]~input_o\);
 
--- Location: FF_X52_Y12_N1
+-- Location: FF_X51_Y12_N1
 \inst1|ADC_out[7]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -615,7 +618,7 @@ PORT MAP (
 	i => ww_ADC_IN(5),
 	o => \ADC_IN[5]~input_o\);
 
--- Location: LCCOMB_X38_Y33_N24
+-- Location: LCCOMB_X38_Y33_N0
 \inst1|ADC_out[5]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst1|ADC_out[5]~feeder_combout\ = \ADC_IN[5]~input_o\
@@ -629,7 +632,7 @@ PORT MAP (
 	datad => \ADC_IN[5]~input_o\,
 	combout => \inst1|ADC_out[5]~feeder_combout\);
 
--- Location: FF_X38_Y33_N25
+-- Location: FF_X38_Y33_N1
 \inst1|ADC_out[5]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -682,7 +685,7 @@ PORT MAP (
 	i => ww_ADC_IN(3),
 	o => \ADC_IN[3]~input_o\);
 
--- Location: LCCOMB_X52_Y12_N18
+-- Location: LCCOMB_X52_Y12_N8
 \inst1|ADC_out[3]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst1|ADC_out[3]~feeder_combout\ = \ADC_IN[3]~input_o\
@@ -696,7 +699,7 @@ PORT MAP (
 	datad => \ADC_IN[3]~input_o\,
 	combout => \inst1|ADC_out[3]~feeder_combout\);
 
--- Location: FF_X52_Y12_N19
+-- Location: FF_X52_Y12_N9
 \inst1|ADC_out[3]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -722,7 +725,7 @@ PORT MAP (
 	i => ww_ADC_IN(2),
 	o => \ADC_IN[2]~input_o\);
 
--- Location: LCCOMB_X5_Y1_N24
+-- Location: LCCOMB_X5_Y1_N0
 \inst1|ADC_out[2]~feeder\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \inst1|ADC_out[2]~feeder_combout\ = \ADC_IN[2]~input_o\
@@ -736,7 +739,7 @@ PORT MAP (
 	datad => \ADC_IN[2]~input_o\,
 	combout => \inst1|ADC_out[2]~feeder_combout\);
 
--- Location: FF_X5_Y1_N25
+-- Location: FF_X5_Y1_N1
 \inst1|ADC_out[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (

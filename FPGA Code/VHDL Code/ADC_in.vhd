@@ -21,7 +21,7 @@ begin
 	process (clk, reset)
 		begin
 			if (reset = '1') then
-				ADC_out <= (others => '0');
+				ADC_out <= "001100000000";
 			
 			elsif (reset = '0') then
 				if (rising_edge(clk)) then

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for P1
-Mon Apr 30 12:16:33 2018
+Mon Apr 30 12:41:18 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 30 12:16:33 2018           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 30 12:41:17 2018           ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Standard Edition ;
 ; Revision Name                      ; P1                                              ;
 ; Top-level Entity Name              ; P1                                              ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Total logic elements               ; 12                                              ;
-;     Total combinational functions  ; 0                                               ;
+;     Total combinational functions  ; 2                                               ;
 ;     Dedicated logic registers      ; 12                                              ;
 ; Total registers                    ; 12                                              ;
 ; Total pins                         ; 26                                              ;
@@ -162,14 +163,14 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path       ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
-; P1.bdf                           ; yes             ; User Block Diagram/Schematic File  ; E:/ELEC241/P1/VHDL Code/P1.bdf     ;         ;
-; ADC_in.vhd                       ; yes             ; User VHDL File                     ; E:/ELEC241/P1/VHDL Code/ADC_in.vhd ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
+; P1.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/P1.bdf     ;         ;
+; ADC_in.vhd                       ; yes             ; User VHDL File                     ; C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/ADC_in.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -179,14 +180,14 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Estimated Total logic elements              ; 12        ;
 ;                                             ;           ;
-; Total combinational functions               ; 0         ;
+; Total combinational functions               ; 2         ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 0         ;
 ;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 0         ;
+;     -- <=2 input functions                  ; 2         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 0         ;
+;     -- normal mode                          ; 2         ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
 ; Total registers                             ; 12        ;
@@ -199,8 +200,8 @@ agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 12        ;
-; Total fan-out                               ; 74        ;
-; Average fan-out                             ; 1.16      ;
+; Total fan-out                               ; 76        ;
+; Average fan-out                             ; 1.15      ;
 +---------------------------------------------+-----------+
 
 
@@ -209,8 +210,8 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |P1                        ; 0 (0)               ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |P1                 ; P1          ; work         ;
-;    |ADC_in:inst1|          ; 0 (0)               ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|ADC_in:inst1    ; ADC_in      ; work         ;
+; |P1                        ; 2 (0)               ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |P1                 ; P1          ; work         ;
+;    |ADC_in:inst1|          ; 2 (2)               ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|ADC_in:inst1    ; ADC_in      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -230,18 +231,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ADC_in:inst1|ADC_out[9]                ; 1       ;
+; ADC_in:inst1|ADC_out[8]                ; 1       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 26                              ;
-; cycloneiii_ff     ; 12                              ;
-;     CLR           ; 12                              ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 12                          ;
+;     CLR               ; 12                          ;
+; cycloneiii_lcell_comb ; 4                           ;
+;     normal            ; 4                           ;
+;         1 data inputs ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.27                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -249,7 +264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -259,17 +274,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
-    Info: Processing started: Mon Apr 30 12:15:48 2018
+    Info: Processing started: Mon Apr 30 12:40:35 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P1 -c P1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file p1.bdf
     Info (12023): Found entity 1: P1
 Info (12021): Found 2 design units, including 1 entities, in source file adc_in.vhd
-    Info (12022): Found design unit 1: ADC_in-Calculations File: E:/ELEC241/P1/VHDL Code/ADC_in.vhd Line: 17
-    Info (12023): Found entity 1: ADC_in File: E:/ELEC241/P1/VHDL Code/ADC_in.vhd Line: 6
+    Info (12022): Found design unit 1: ADC_in-Calculations File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/ADC_in.vhd Line: 17
+    Info (12023): Found entity 1: ADC_in File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/ADC_in.vhd Line: 6
 Info (12127): Elaborating entity "P1" for the top level hierarchy
 Info (12128): Elaborating entity "ADC_in" for hierarchy "ADC_in:inst1"
+Info (13000): Registers with preset signals will power-up high File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/ADC_in.vhd Line: 27
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -279,8 +296,8 @@ Info (21057): Implemented 38 device resources after synthesis - the final resour
     Info (21061): Implemented 12 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 723 megabytes
-    Info: Processing ended: Mon Apr 30 12:16:33 2018
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:01:28
+    Info: Processing ended: Mon Apr 30 12:41:18 2018
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:29
 
 

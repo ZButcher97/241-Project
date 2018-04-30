@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "04/30/2018 12:21:04"
+-- Generated on "04/30/2018 12:44:28"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          P1
 -- 
@@ -59,9 +59,13 @@ BEGIN
 t_prcs_ADC_IN_11: PROCESS
 BEGIN
 	ADC_IN(11) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	ADC_IN(11) <= '0';
-	WAIT FOR 600000 ps;
+	WAIT FOR 300000 ps;
+	ADC_IN(11) <= '1';
+	WAIT FOR 200000 ps;
+	ADC_IN(11) <= '0';
+	WAIT FOR 100000 ps;
 	ADC_IN(11) <= '1';
 	WAIT FOR 100000 ps;
 	ADC_IN(11) <= '0';
@@ -71,29 +75,29 @@ END PROCESS t_prcs_ADC_IN_11;
 t_prcs_ADC_IN_10: PROCESS
 BEGIN
 	ADC_IN(10) <= '0';
-	WAIT FOR 100000 ps;
-	ADC_IN(10) <= '1';
 	WAIT FOR 200000 ps;
-	ADC_IN(10) <= '0';
-	WAIT FOR 100000 ps;
 	ADC_IN(10) <= '1';
-	WAIT FOR 200000 ps;
+	WAIT FOR 700000 ps;
 	ADC_IN(10) <= '0';
-	WAIT FOR 300000 ps;
-	ADC_IN(10) <= '1';
 WAIT;
 END PROCESS t_prcs_ADC_IN_10;
 -- ADC_IN[9]
 t_prcs_ADC_IN_9: PROCESS
 BEGIN
+	ADC_IN(9) <= '1';
+	WAIT FOR 100000 ps;
 	ADC_IN(9) <= '0';
 	WAIT FOR 100000 ps;
 	ADC_IN(9) <= '1';
 	WAIT FOR 100000 ps;
 	ADC_IN(9) <= '0';
-	WAIT FOR 400000 ps;
+	WAIT FOR 200000 ps;
 	ADC_IN(9) <= '1';
 	WAIT FOR 200000 ps;
+	ADC_IN(9) <= '0';
+	WAIT FOR 100000 ps;
+	ADC_IN(9) <= '1';
+	WAIT FOR 100000 ps;
 	ADC_IN(9) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_9;
@@ -101,29 +105,31 @@ END PROCESS t_prcs_ADC_IN_9;
 t_prcs_ADC_IN_8: PROCESS
 BEGIN
 	ADC_IN(8) <= '0';
-	WAIT FOR 300000 ps;
-	ADC_IN(8) <= '1';
-	WAIT FOR 100000 ps;
-	ADC_IN(8) <= '0';
-	WAIT FOR 100000 ps;
-	ADC_IN(8) <= '1';
-	WAIT FOR 100000 ps;
-	ADC_IN(8) <= '0';
 	WAIT FOR 200000 ps;
 	ADC_IN(8) <= '1';
+	WAIT FOR 100000 ps;
+	ADC_IN(8) <= '0';
+	WAIT FOR 100000 ps;
+	ADC_IN(8) <= '1';
+	WAIT FOR 200000 ps;
+	ADC_IN(8) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_8;
 -- ADC_IN[7]
 t_prcs_ADC_IN_7: PROCESS
 BEGIN
 	ADC_IN(7) <= '1';
-	WAIT FOR 200000 ps;
+	WAIT FOR 100000 ps;
 	ADC_IN(7) <= '0';
-	WAIT FOR 200000 ps;
+	WAIT FOR 100000 ps;
 	ADC_IN(7) <= '1';
 	WAIT FOR 300000 ps;
 	ADC_IN(7) <= '0';
 	WAIT FOR 200000 ps;
+	ADC_IN(7) <= '1';
+	WAIT FOR 100000 ps;
+	ADC_IN(7) <= '0';
+	WAIT FOR 100000 ps;
 	ADC_IN(7) <= '1';
 WAIT;
 END PROCESS t_prcs_ADC_IN_7;
@@ -131,9 +137,9 @@ END PROCESS t_prcs_ADC_IN_7;
 t_prcs_ADC_IN_6: PROCESS
 BEGIN
 	ADC_IN(6) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 300000 ps;
 	ADC_IN(6) <= '1';
-	WAIT FOR 200000 ps;
+	WAIT FOR 100000 ps;
 	ADC_IN(6) <= '0';
 	WAIT FOR 100000 ps;
 	ADC_IN(6) <= '1';
@@ -141,27 +147,21 @@ BEGIN
 	ADC_IN(6) <= '0';
 	WAIT FOR 300000 ps;
 	ADC_IN(6) <= '1';
-	WAIT FOR 100000 ps;
-	ADC_IN(6) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_6;
 -- ADC_IN[5]
 t_prcs_ADC_IN_5: PROCESS
 BEGIN
-	ADC_IN(5) <= '1';
-	WAIT FOR 300000 ps;
 	ADC_IN(5) <= '0';
 	WAIT FOR 200000 ps;
 	ADC_IN(5) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	ADC_IN(5) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_5;
 -- ADC_IN[4]
 t_prcs_ADC_IN_4: PROCESS
 BEGIN
-	ADC_IN(4) <= '1';
-	WAIT FOR 200000 ps;
 	ADC_IN(4) <= '0';
 	WAIT FOR 200000 ps;
 	ADC_IN(4) <= '1';
@@ -169,9 +169,9 @@ BEGIN
 	ADC_IN(4) <= '0';
 	WAIT FOR 100000 ps;
 	ADC_IN(4) <= '1';
-	WAIT FOR 200000 ps;
-	ADC_IN(4) <= '0';
 	WAIT FOR 100000 ps;
+	ADC_IN(4) <= '0';
+	WAIT FOR 200000 ps;
 	ADC_IN(4) <= '1';
 WAIT;
 END PROCESS t_prcs_ADC_IN_4;
@@ -181,11 +181,7 @@ BEGIN
 	ADC_IN(3) <= '0';
 	WAIT FOR 500000 ps;
 	ADC_IN(3) <= '1';
-	WAIT FOR 100000 ps;
-	ADC_IN(3) <= '0';
-	WAIT FOR 100000 ps;
-	ADC_IN(3) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	ADC_IN(3) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_3;
@@ -197,29 +193,25 @@ BEGIN
 	ADC_IN(2) <= '1';
 	WAIT FOR 100000 ps;
 	ADC_IN(2) <= '0';
-	WAIT FOR 100000 ps;
+	WAIT FOR 200000 ps;
 	ADC_IN(2) <= '1';
-	WAIT FOR 100000 ps;
+	WAIT FOR 300000 ps;
 	ADC_IN(2) <= '0';
-	WAIT FOR 100000 ps;
-	ADC_IN(2) <= '1';
-	WAIT FOR 100000 ps;
-	ADC_IN(2) <= '0';
-	WAIT FOR 100000 ps;
-	ADC_IN(2) <= '1';
 WAIT;
 END PROCESS t_prcs_ADC_IN_2;
 -- ADC_IN[1]
 t_prcs_ADC_IN_1: PROCESS
 BEGIN
-	ADC_IN(1) <= '0';
-	WAIT FOR 300000 ps;
 	ADC_IN(1) <= '1';
 	WAIT FOR 100000 ps;
 	ADC_IN(1) <= '0';
 	WAIT FOR 100000 ps;
 	ADC_IN(1) <= '1';
+	WAIT FOR 200000 ps;
+	ADC_IN(1) <= '0';
 	WAIT FOR 400000 ps;
+	ADC_IN(1) <= '1';
+	WAIT FOR 100000 ps;
 	ADC_IN(1) <= '0';
 WAIT;
 END PROCESS t_prcs_ADC_IN_1;
@@ -227,26 +219,26 @@ END PROCESS t_prcs_ADC_IN_1;
 t_prcs_ADC_IN_0: PROCESS
 BEGIN
 	ADC_IN(0) <= '0';
-	WAIT FOR 200000 ps;
+	WAIT FOR 100000 ps;
 	ADC_IN(0) <= '1';
 	WAIT FOR 100000 ps;
 	ADC_IN(0) <= '0';
-	WAIT FOR 200000 ps;
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '1';
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '0';
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '1';
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '0';
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '1';
+	WAIT FOR 100000 ps;
+	ADC_IN(0) <= '0';
+	WAIT FOR 100000 ps;
 	ADC_IN(0) <= '1';
 WAIT;
 END PROCESS t_prcs_ADC_IN_0;
-
--- CLK
-t_prcs_CLK: PROCESS
-BEGIN
-LOOP
-	CLK <= '0';
-	WAIT FOR 5000 ps;
-	CLK <= '1';
-	WAIT FOR 5000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_CLK;
 
 -- RESET
 t_prcs_RESET: PROCESS
@@ -254,8 +246,20 @@ BEGIN
 	RESET <= '0';
 	WAIT FOR 80000 ps;
 	RESET <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 140000 ps;
 	RESET <= '0';
 WAIT;
 END PROCESS t_prcs_RESET;
+
+-- CLK
+t_prcs_CLK: PROCESS
+BEGIN
+LOOP
+	CLK <= '0';
+	WAIT FOR 10000 ps;
+	CLK <= '1';
+	WAIT FOR 10000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
+END PROCESS t_prcs_CLK;
 END P1_arch;

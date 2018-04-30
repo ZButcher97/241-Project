@@ -1,5 +1,5 @@
 Fitter report for P1
-Mon Apr 30 12:16:53 2018
+Mon Apr 30 12:41:38 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Standard Edition
 
 
@@ -66,7 +66,7 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Apr 30 12:16:53 2018           ;
+; Fitter Status                      ; Successful - Mon Apr 30 12:41:38 2018           ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Standard Edition ;
 ; Revision Name                      ; P1                                              ;
 ; Top-level Entity Name              ; P1                                              ;
@@ -74,7 +74,7 @@ agreement for further details.
 ; Device                             ; EP4CE22F17C6                                    ;
 ; Timing Models                      ; Final                                           ;
 ; Total logic elements               ; 12 / 22,320 ( < 1 % )                           ;
-;     Total combinational functions  ; 0 / 22,320 ( 0 % )                              ;
+;     Total combinational functions  ; 2 / 22,320 ( < 1 % )                            ;
 ;     Dedicated logic registers      ; 12 / 22,320 ( < 1 % )                           ;
 ; Total registers                    ; 12                                              ;
 ; Total pins                         ; 26 / 154 ( 17 % )                               ;
@@ -168,8 +168,8 @@ agreement for further details.
 ; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+-------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 77 ) ; 0.00 % ( 0 / 77 )          ; 0.00 % ( 0 / 77 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 77 ) ; 0.00 % ( 0 / 77 )          ; 0.00 % ( 0 / 77 )        ;
+;     -- Requested    ; 0.00 % ( 0 / 79 ) ; 0.00 % ( 0 / 79 )          ; 0.00 % ( 0 / 79 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 79 ) ; 0.00 % ( 0 / 79 )          ; 0.00 % ( 0 / 79 )        ;
 ;                     ;                   ;                            ;                          ;
 ; Routing (by net)    ;                   ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -192,7 +192,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 67 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 69 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -200,7 +200,7 @@ agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
+The pin-out file can be found in C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/output_files/P1.pin.
 
 
 +---------------------------------------------------------------------+
@@ -210,24 +210,24 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 +---------------------------------------------+-----------------------+
 ; Total logic elements                        ; 12 / 22,320 ( < 1 % ) ;
 ;     -- Combinational with no register       ; 0                     ;
-;     -- Register only                        ; 12                    ;
-;     -- Combinational with a register        ; 0                     ;
+;     -- Register only                        ; 10                    ;
+;     -- Combinational with a register        ; 2                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
 ;     -- 4 input functions                    ; 0                     ;
 ;     -- 3 input functions                    ; 0                     ;
-;     -- <=2 input functions                  ; 0                     ;
-;     -- Register only                        ; 12                    ;
+;     -- <=2 input functions                  ; 2                     ;
+;     -- Register only                        ; 10                    ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 0                     ;
+;     -- normal mode                          ; 2                     ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
 ; Total registers*                            ; 12 / 23,018 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 12 / 22,320 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )       ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 10 / 1,395 ( < 1 % )  ;
+; Total LABs:  partially or completely used   ; 11 / 1,395 ( < 1 % )  ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 26 / 154 ( 17 % )     ;
 ;     -- Clock pins                           ; 2 / 7 ( 29 % )        ;
@@ -265,24 +265,24 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ;                                             ;                      ;                                ;
 ; Total logic elements                        ; 12 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- Combinational with no register       ; 0                    ; 0                              ;
-;     -- Register only                        ; 12                   ; 0                              ;
-;     -- Combinational with a register        ; 0                    ; 0                              ;
+;     -- Register only                        ; 10                   ; 0                              ;
+;     -- Combinational with a register        ; 2                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 0                    ; 0                              ;
 ;     -- 3 input functions                    ; 0                    ; 0                              ;
-;     -- <=2 input functions                  ; 0                    ; 0                              ;
-;     -- Register only                        ; 12                   ; 0                              ;
+;     -- <=2 input functions                  ; 2                    ; 0                              ;
+;     -- Register only                        ; 10                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 0                    ; 0                              ;
+;     -- normal mode                          ; 2                    ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 12                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 12 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 10 / 1395 ( < 1 % )  ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 11 / 1395 ( < 1 % )  ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 26                   ; 0                              ;
@@ -332,7 +332,7 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; ADC_IN[0]  ; B11   ; 7        ; 40           ; 34           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADC_IN[10] ; F13   ; 6        ; 53           ; 21           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; ADC_IN[10] ; G15   ; 6        ; 53           ; 20           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[11] ; N3    ; 3        ; 1            ; 0            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[1]  ; D9    ; 7        ; 31           ; 34           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[2]  ; N5    ; 3        ; 5            ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
@@ -340,8 +340,8 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; ADC_IN[4]  ; B13   ; 7        ; 49           ; 34           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[5]  ; C11   ; 7        ; 38           ; 34           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[6]  ; L14   ; 5        ; 53           ; 9            ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADC_IN[7]  ; L16   ; 5        ; 53           ; 11           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; ADC_IN[8]  ; F14   ; 6        ; 53           ; 24           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; ADC_IN[7]  ; L15   ; 5        ; 53           ; 11           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; ADC_IN[8]  ; F13   ; 6        ; 53           ; 21           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; ADC_IN[9]  ; B16   ; 6        ; 53           ; 22           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; CLK        ; E1    ; 1        ; 0            ; 16           ; 7            ; 12                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; RESET      ; M2    ; 2        ; 0            ; 16           ; 14           ; 12                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
@@ -354,13 +354,13 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Y[0]  ; A11   ; 7        ; 40           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Y[10] ; G15   ; 6        ; 53           ; 20           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Y[10] ; F14   ; 6        ; 53           ; 24           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[11] ; P3    ; 3        ; 1            ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[1]  ; C9    ; 7        ; 31           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Y[2]  ; T2    ; 3        ; 3            ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Y[3]  ; L15   ; 5        ; 53           ; 11           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Y[2]  ; T3    ; 3        ; 1            ; 0            ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Y[3]  ; L16   ; 5        ; 53           ; 11           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[4]  ; A13   ; 7        ; 49           ; 34           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; Y[5]  ; A12   ; 7        ; 43           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; Y[5]  ; A15   ; 7        ; 38           ; 34           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[6]  ; R16   ; 5        ; 53           ; 8            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[7]  ; K15   ; 5        ; 53           ; 13           ; 7            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; Y[8]  ; G16   ; 6        ; 53           ; 20           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
@@ -386,10 +386,11 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; G12      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; G12      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
 ; G16      ; DIFFIO_R5n, INIT_DONE       ; Use as regular IO        ; Y[8]                    ; Dual Purpose Pin          ;
-; G15      ; DIFFIO_R5p, CRC_ERROR       ; Use as regular IO        ; Y[10]                   ; Dual Purpose Pin          ;
+; G15      ; DIFFIO_R5p, CRC_ERROR       ; Use as regular IO        ; ADC_IN[10]              ; Dual Purpose Pin          ;
 ; F16      ; DIFFIO_R4n, nCEO            ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
 ; F15      ; DIFFIO_R4p, CLKUSR          ; Use as regular IO        ; Y[9]                    ; Dual Purpose Pin          ;
 ; B11      ; DIFFIO_T20p, PADD0          ; Use as regular IO        ; ADC_IN[0]               ; Dual Purpose Pin          ;
+; A15      ; DIFFIO_T19n, PADD1          ; Use as regular IO        ; Y[5]                    ; Dual Purpose Pin          ;
 ; C9       ; DIFFIO_T15n, PADD7          ; Use as regular IO        ; Y[1]                    ; Dual Purpose Pin          ;
 ; D9       ; DIFFIO_T15p, PADD8          ; Use as regular IO        ; ADC_IN[1]               ; Dual Purpose Pin          ;
 +----------+-----------------------------+--------------------------+-------------------------+---------------------------+
@@ -427,10 +428,10 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; A9       ; 209        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; A10      ; 198        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A11      ; 188        ; 7        ; Y[0]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; A12      ; 186        ; 7        ; Y[5]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A12      ; 186        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A13      ; 179        ; 7        ; Y[4]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A14      ; 181        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A15      ; 191        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; A15      ; 191        ; 7        ; Y[5]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A16      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; B1       ; 5          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; B2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -508,8 +509,8 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; F10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F11      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; F12      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; F13      ; 161        ; 6        ; ADC_IN[10]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; F14      ; 167        ; 6        ; ADC_IN[8]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F13      ; 161        ; 6        ; ADC_IN[8]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F14      ; 167        ; 6        ; Y[10]                                                     ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F15      ; 163        ; 6        ; Y[9]                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F16      ; 162        ; 6        ; ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN                ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G1       ; 16         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -527,7 +528,7 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; G12      ; 156        ; 6        ; ^MSEL3                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; G14      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; G15      ; 160        ; 6        ; Y[10]                                                     ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G15      ; 160        ; 6        ; ADC_IN[10]                                                ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G16      ; 159        ; 6        ; Y[8]                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H1       ; 17         ; 1        ; ~ALTERA_DCLK~                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
 ; H2       ; 18         ; 1        ; ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP          ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
@@ -591,8 +592,8 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; L12      ;            ; --       ; VCCA4                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; L13      ; 136        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L14      ; 134        ; 5        ; ADC_IN[6]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; L15      ; 138        ; 5        ; Y[3]                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; L16      ; 137        ; 5        ; ADC_IN[7]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L15      ; 138        ; 5        ; ADC_IN[7]                                                 ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L16      ; 137        ; 5        ; Y[3]                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M1       ; 28         ; 2        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M2       ; 27         ; 2        ; RESET                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M3       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -658,8 +659,8 @@ The pin-out file can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.pin.
 ; R15      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R16      ; 129        ; 5        ; Y[6]                                                      ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T1       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; T2       ; 59         ; 3        ; Y[2]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; T3       ; 55         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; T2       ; 59         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; T3       ; 55         ; 3        ; Y[2]                                                      ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; T4       ; 61         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T5       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T6       ; 74         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -742,8 +743,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
-; |P1                        ; 12 (0)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 26   ; 0            ; 0 (0)        ; 12 (0)            ; 0 (0)            ; |P1                 ; P1          ; work         ;
-;    |ADC_in:inst1|          ; 12 (12)     ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 12 (12)           ; 0 (0)            ; |P1|ADC_in:inst1    ; ADC_in      ; work         ;
+; |P1                        ; 12 (0)      ; 12 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 26   ; 0            ; 0 (0)        ; 10 (0)            ; 2 (0)            ; |P1                 ; P1          ; work         ;
+;    |ADC_in:inst1|          ; 12 (12)     ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 10 (10)           ; 2 (2)            ; |P1|ADC_in:inst1    ; ADC_in      ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -771,7 +772,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ADC_IN[10] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; ADC_IN[9]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; ADC_IN[8]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; ADC_IN[7]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; ADC_IN[7]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; ADC_IN[6]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; ADC_IN[5]  ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; ADC_IN[4]  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -792,13 +793,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CLK                                    ;                   ;         ;
 ; RESET                                  ;                   ;         ;
 ; ADC_IN[10]                             ;                   ;         ;
-;      - ADC_in:inst1|ADC_out[10]~feeder ; 0                 ; 6       ;
+;      - ADC_in:inst1|ADC_out[10]        ; 0                 ; 6       ;
 ; ADC_IN[9]                              ;                   ;         ;
-;      - ADC_in:inst1|ADC_out[9]~feeder  ; 0                 ; 6       ;
+;      - ADC_in:inst1|ADC_out[9]~0       ; 0                 ; 6       ;
 ; ADC_IN[8]                              ;                   ;         ;
-;      - ADC_in:inst1|ADC_out[8]         ; 0                 ; 6       ;
+;      - ADC_in:inst1|ADC_out[8]~1       ; 0                 ; 6       ;
 ; ADC_IN[7]                              ;                   ;         ;
-;      - ADC_in:inst1|ADC_out[7]         ; 0                 ; 6       ;
+;      - ADC_in:inst1|ADC_out[7]         ; 1                 ; 6       ;
 ; ADC_IN[6]                              ;                   ;         ;
 ;      - ADC_in:inst1|ADC_out[6]~feeder  ; 0                 ; 6       ;
 ; ADC_IN[5]                              ;                   ;         ;
@@ -855,10 +856,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 1.20) ; Number of LABs  (Total = 10) ;
+; Number of Logic Elements  (Average = 1.09) ; Number of LABs  (Total = 11) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 8                            ;
-; 2                                          ; 2                            ;
+; 1                                          ; 10                           ;
+; 2                                          ; 1                            ;
 ; 3                                          ; 0                            ;
 ; 4                                          ; 0                            ;
 ; 5                                          ; 0                            ;
@@ -879,46 +880,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 10) ;
+; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 11) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 10                           ;
-; 1 Clock                            ; 10                           ;
+; 1 Async. clear                     ; 11                           ;
+; 1 Clock                            ; 11                           ;
 +------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 2.10) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced  (Average = 1.91) ; Number of LABs  (Total = 11) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 1                            ;
-; 2                                           ; 7                            ;
-; 3                                           ; 2                            ;
+; 1                                           ; 2                            ;
+; 2                                           ; 8                            ;
+; 3                                           ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 1.20) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced Out  (Average = 1.09) ; Number of LABs  (Total = 11) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 8                            ;
-; 2                                               ; 2                            ;
+; 1                                               ; 10                           ;
+; 2                                               ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 3.20) ; Number of LABs  (Total = 10) ;
+; Number of Distinct Inputs  (Average = 3.09) ; Number of LABs  (Total = 11) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 8                            ;
-; 4                                           ; 2                            ;
+; 3                                           ; 10                           ;
+; 4                                           ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1094,7 +1095,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  12 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1108,23 +1109,23 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file E:/ELEC241/P1/VHDL Code/output_files/P1.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (144001): Generated suppressed messages file C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/output_files/P1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1486 megabytes
-    Info: Processing ended: Mon Apr 30 12:16:56 2018
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 1488 megabytes
+    Info: Processing ended: Mon Apr 30 12:41:39 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in E:/ELEC241/P1/VHDL Code/output_files/P1.fit.smsg.
+The suppressed messages can be found in C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/output_files/P1.fit.smsg.
 
 
