@@ -103,7 +103,7 @@ int SPI_ConfigReg(int Reset, int Samp, int Mode)
 	
 	return RegValue;
 	
-//	Overflow &= RegValue; 											//This is used to split the word into the bits neede and this should be included in the main() code
+//	Overflow &= RegValue; 											//This is used to split the word into the bits needed and this should be included in the main() code
 //	Avaliable &= RegValue;
 //	FifoLen &= RegValue;
 	
