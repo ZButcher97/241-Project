@@ -46,6 +46,10 @@ int main()
 		GreenLED = 1;
 		
 		printf("Initalised/n/r");
+		
+		SPI_SendRead(SPI_Reset, SPI_SS_ConfigRed);
+		
+	
 		printf("Starting main loop./n/r");
 	
 		//This is the main loop that happens after the initlisation has happend on start up		
