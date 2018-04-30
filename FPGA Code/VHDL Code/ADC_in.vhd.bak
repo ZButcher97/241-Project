@@ -1,0 +1,38 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_signed.all;
+
+entity ADC_in is
+
+	port(
+		clk 		: in std_logic; --Clock
+		load 		: in std_logic; --Clock enable
+		reset	   : in std_logic; --Async reset
+		d 			: in std_logic_vector(7 downto 0); --Data word input
+		q 			: out std_logic_vector(7 downto 0) --Data output
+	);
+
+end entity;
+
+architecture Calculations of ADC_in is
+
+	signal latched : std_logic_vector(7 downto 0);
+
+begin
+
+	--Connect output to internal latched signal
+	q <= latched;
+
+	process (clk, reset)
+		begin
+			if (reset = '0') then
+				latched <= (others => '0');
+				
+			elsif (rising_edge(clk)) then
+				if (load = '1') then
+					latched <= d; --implicit latch
+				end if;
+			end if;
+	end process;
+end Calculations;
