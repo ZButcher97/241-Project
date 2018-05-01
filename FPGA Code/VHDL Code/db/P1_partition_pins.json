@@ -64,10 +64,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
-					"strict" : false
-				},
-				{
 					"name" : "RESET",
 					"strict" : false
 				},
@@ -77,6 +73,10 @@
 				},
 				{
 					"name" : "ADC_IN[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
 					"strict" : false
 				},
 				{
