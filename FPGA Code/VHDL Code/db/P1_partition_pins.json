@@ -68,6 +68,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
 					"name" : "USER_BUTTON",
 					"strict" : false
 				},
@@ -76,35 +80,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
+					"name" : "ADC_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[0]",
 					"strict" : false
 				},
 				{
 					"name" : "ADC_IN[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[4]",
 					"strict" : false
 				},
 				{
@@ -116,11 +100,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[1]",
+					"name" : "ADC_IN[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[0]",
+					"name" : "ADC_IN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[8]",
 					"strict" : false
 				}
 			]

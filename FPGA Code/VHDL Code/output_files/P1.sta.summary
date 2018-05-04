@@ -3,75 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -1.794
-TNS   : -21.165
-
-Type  : Slow 1200mV 85C Model Setup 'USER_BUTTON'
-Slack : -1.077
-TNS   : -10.959
-
-Type  : Slow 1200mV 85C Model Hold 'USER_BUTTON'
-Slack : 0.705
-TNS   : 0.000
+Slack : -2.118
+TNS   : -32.289
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : 1.315
+Slack : 0.532
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -15.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'USER_BUTTON'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -29.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -1.539
-TNS   : -18.215
-
-Type  : Slow 1200mV 0C Model Setup 'USER_BUTTON'
-Slack : -0.946
-TNS   : -9.492
-
-Type  : Slow 1200mV 0C Model Hold 'USER_BUTTON'
-Slack : 0.698
-TNS   : 0.000
+Slack : -1.820
+TNS   : -26.637
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : 1.246
+Slack : 0.492
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -15.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'USER_BUTTON'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -29.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -0.790
-TNS   : -9.381
-
-Type  : Fast 1200mV 0C Model Setup 'USER_BUTTON'
-Slack : -0.103
-TNS   : -0.368
-
-Type  : Fast 1200mV 0C Model Hold 'USER_BUTTON'
-Slack : 0.283
-TNS   : 0.000
+Slack : -0.722
+TNS   : -8.236
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : 0.670
+Slack : 0.274
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -15.684
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'USER_BUTTON'
-Slack : -3.000
-TNS   : -3.000
+TNS   : -30.566
 
 ------------------------------------------------------------
