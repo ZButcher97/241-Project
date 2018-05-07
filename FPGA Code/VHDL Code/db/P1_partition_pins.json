@@ -64,6 +64,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "Z[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Z[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Z[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Z[0]",
+					"strict" : false
+				},
+				{
 					"name" : "RESET",
 					"strict" : false
 				},
@@ -80,11 +96,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[1]",
+					"name" : "ADC_IN[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[0]",
+					"name" : "ADC_IN[1]",
 					"strict" : false
 				},
 				{
@@ -92,15 +108,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[3]",
-					"strict" : false
-				},
-				{
 					"name" : "ADC_IN[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[5]",
+					"name" : "ADC_IN[3]",
 					"strict" : false
 				},
 				{
@@ -108,7 +120,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[7]",
+					"name" : "ADC_IN[5]",
 					"strict" : false
 				},
 				{
@@ -116,11 +128,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[9]",
+					"name" : "ADC_IN[7]",
 					"strict" : false
 				},
 				{
 					"name" : "ADC_IN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[9]",
 					"strict" : false
 				}
 			]

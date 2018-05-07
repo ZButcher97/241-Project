@@ -19,13 +19,14 @@ end entity;
 architecture Calculations of ADC_in is
 
 signal latched 		  : std_logic;
-signal BufferCount 	  : std_logic_vector(3 downto 0)  := "0000";
+signal BufferCount 	  : integer;
 signal Buffer1   		  : std_logic_vector(11 downto 0) := "000000000000";
 signal Buffer2 		  : std_logic_vector(11 downto 0) := "000000000000";
 signal Buffer3 		  : std_logic_vector(11 downto 0) := "000000000000";
 signal Move_to_Buffer1 : std_logic_vector(11 downto 0) := "000000000000";
 signal Move_to_Buffer2 : std_logic_vector(11 downto 0) := "000000000000";
 signal Move_to_Buffer3 : std_logic_vector(11 downto 0) := "000000000000";
+signal clock_count	  : integer;
 
 begin
 
@@ -36,28 +37,48 @@ begin
 					ADC_out <= "0011" & "000000000000";  --0011 is "reset" on MCU
 					latched <= '0';
 					BufferCheck <= "0000";
+					Buffer1 <= "000000000000";
+					Buffer2 <= "000000000000";
+					Buffer3 <= "000000000000";
+					clock_count <= 0;
+					BufferCount <= 0;
 							
 				elsif (enable = '1' or latched = '1') then
 					latched <= '1';
+					clock_count <= clock_count + 1;
+					--BufferCount <= 0;
 					
 					if (reset = '0') then
 						
-						if (Buffer1 = "000000000000") then --or ADC_in /= Buffer1
-							Buffer1 <= ADC_in;
-						end if;
+						if (clock_count = 4) then
 						
-						if (Buffer1 /= "000000000000") then
-							Buffer2 <= ADC_in;
-						end if;
+							if (Buffer1 = "000000000000") then --or ADC_in /= Buffer1
+								Buffer1 <= ADC_in;
+								BufferCount <= BufferCount + 1;
+							end if;
+							
+							if (Buffer1 /= "000000000000") then
+								Buffer2 <= ADC_in;
+								BufferCount <= BufferCount + 1;
+							end if;
+							
+							if (Buffer2 /= "000000000000") then --This could be continued infinitely if required
+								Buffer3 <= ADC_in;
+								BufferCount <= BufferCount + 1;
+							end if;
+							
+							--output_1 <= conv_std_logic_vector(BufferCount, 4);
+							BufferCheck <= conv_std_logic_vector(BufferCount, 4);
+							ADC_out <= "1000" & Buffer1;  --1000 is the "recieve data" from MCU
+							--BufferCheck <= BufferCount;
+							
+							
+							if (ADC_in /= Buffer1) then
+								Buffer1 <= ADC_in;
+							end if;
+							
+							clock_count <= 0;
 						
-						if (Buffer2 /= "000000000000") then --This could be continued infinitely if required
-							Buffer3 <= ADC_in;
-						end if;
-						
-						ADC_out <= "1000" & Buffer1;  --1000 is the "recieve data" from MCU
-						
-						if (ADC_in /= Buffer1) then
-							Buffer1 <= ADC_in;
 						end if;
 						
 					end if;
