@@ -41,9 +41,9 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "enable" (rect 0 0 24 12)(font "Arial" ))
-		(text "enable" (rect 21 59 45 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
+		(text "FIFO_IN[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "FIFO_IN[7..0]" (rect 21 59 77 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 0 80)
@@ -65,6 +65,13 @@ agreement for further details.
 		(text "BufferCheck[3..0]" (rect 0 0 71 12)(font "Arial" ))
 		(text "BufferCheck[3..0]" (rect 140 43 211 55)(font "Arial" ))
 		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "ERROR[3..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "ERROR[3..0]" (rect 152 59 211 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 216 96)(line_width 1))

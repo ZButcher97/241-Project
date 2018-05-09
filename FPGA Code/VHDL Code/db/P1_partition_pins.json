@@ -4,83 +4,91 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Y[15]",
+					"name" : "ADC_OUT[15]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[13]",
+					"name" : "ADC_OUT[13]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[12]",
+					"name" : "ADC_OUT[12]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[11]",
+					"name" : "ADC_OUT[11]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[10]",
+					"name" : "ADC_OUT[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[9]",
+					"name" : "ADC_OUT[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[8]",
+					"name" : "ADC_OUT[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[7]",
+					"name" : "ADC_OUT[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[6]",
+					"name" : "ADC_OUT[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[5]",
+					"name" : "ADC_OUT[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[4]",
+					"name" : "ADC_OUT[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[3]",
+					"name" : "ADC_OUT[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[2]",
+					"name" : "ADC_OUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[1]",
+					"name" : "ADC_OUT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Y[0]",
+					"name" : "ADC_OUT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Z[3]",
+					"name" : "BUFFERCHEQ[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Z[2]",
+					"name" : "BUFFERCHEQ[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Z[1]",
+					"name" : "OUT2MCU[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Z[0]",
+					"name" : "OUT2MCU[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RESET",
+					"name" : "OUT2MCU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUTCHECK[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUTCHECK[0]",
 					"strict" : false
 				},
 				{
@@ -88,11 +96,51 @@
 					"strict" : false
 				},
 				{
-					"name" : "USER_BUTTON",
+					"name" : "MCU_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[0]",
 					"strict" : false
 				},
 				{
 					"name" : "ADC_IN[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[10]",
 					"strict" : false
 				},
 				{
@@ -101,10 +149,6 @@
 				},
 				{
 					"name" : "ADC_IN[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[10]",
 					"strict" : false
 				},
 				{
@@ -129,14 +173,6 @@
 				},
 				{
 					"name" : "ADC_IN[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[9]",
 					"strict" : false
 				}
 			]
