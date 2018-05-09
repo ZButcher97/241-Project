@@ -49,7 +49,7 @@ begin
 					
 						if (clock_count = 1) then --Shift Buffers
 						
-							if (Buffer1 /= ADC_in) then
+							if (Buffer1 /= ADC_in) then --If Buffer 1 doesnt equal current input data
 							
 								if (Buffer2 /= "000000000000") then
 									Buffer1 <= Buffer2;
@@ -95,11 +95,17 @@ begin
 							end if;
 							
 							BufferCheck <= conv_std_logic_vector(BufferCount, 4);
-							ADC_out <= "1000" & Buffer1;  --1000 is the "recieve data" from MCU
+							--ADC_out <= "1000" & Buffer1;  --1000 is the "recieve data" from MCU
 							
 							clock_count <= 0;
 						
-						end if; --clock_count = 4
+						end if; --clock_count = 2
+						
+						if (FIFO_IN(2) = '1') then --LOAD buffer1 onto ADC_out
+						
+							ADC_out <= "1000" & Buffer1;  --1000 is the "recieve data" from MCU
+							
+						end if;  --FIFO_IN(2) = '1'
 						
 					end if; --reset=0
 					

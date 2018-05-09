@@ -30,11 +30,19 @@ begin
 			
 				SPACE_AVAILABLE <= (MAX - (conv_integer(signed(BUFFER_IN))));
 			
+				if (MCU_IN = "00000000") then --IF no data required
+				
+					OUTPUT <= MCU_IN;
+					
+				end if;
+				
+				
 				if (MCU_IN = "00000001") then  --IF RESET = 1
 					
 					SPACE_AVAILABLE <= MAX; --Clear the buffers
 					OUTPUT(0) <= '1';			--Set Reset flag to 1
 					OUTPUT(1) <= '0';			--Set Sampling to 0
+					OUTPUT(2) <= '0';			--Don't load ADC data onto MCU
 					OUTPUT(6) <= '0';			--Overflow = 0
 					
 				end if;
@@ -44,7 +52,18 @@ begin
 					
 					OUTPUT(0) <= '0';
 					OUTPUT(1) <= '1';			--Set Sampling to 1
-					OUTPUT(6) <= '0';			--Overflow = 0
+					OUTPUT(2) <= '0';			--Don't load ADC data onto MCU
+					--OUTPUT(6) <= '0';		--Overflow = 0
+					
+				end if;
+				
+				
+				if (MCU_IN = "00000100") then --IF MCU asks to load data
+				
+					OUTPUT(0) <= '0';			--Set RESET flag to 0
+					OUTPUT(1) <= '1';			--Set Sampling to 1
+					OUTPUT(2) <= '1';			--Load ADC data onto MCU
+					--OUTPUT(6) <= '0';		--Overflow = 0
 					
 				end if;
 				

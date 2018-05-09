@@ -9,7 +9,7 @@ z2
 cModel Technology
 dE:/ELEC241/P1/VHDL Code/simulation/qsim
 Ehard_block
-Z0 w1525893456
+Z0 w1525899738
 Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 K`kJb<]?z4U5EbkG_:lMO3
 Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1525893459
+Z11 !s110 1525899745
 !i10b 1
-Z12 !s108 1525893459.000000
+Z12 !s108 1525899744.000000
 Z13 !s90 -work|work|P1.vho|
 Z14 !s107 P1.vho|
 !i113 1
@@ -92,10 +92,10 @@ R4
 R5
 R18
 DEx4 work 2 p1 0 22 5oT_1A_ZjhgmKDj0W@cId3
-l446
+l447
 L148
-V[k^NQ`A?K>hNGjI^eW6HQ3
-!s100 `d_Iz_C:IliiI:eZTi41T2
+VGROFj@c]Ro]O4gHzd1DZf2
+!s100 V@EAi3CQedD9`G]<C>;TS0
 R10
 32
 R11
@@ -107,7 +107,7 @@ R14
 R15
 R16
 Ep1_vhd_vec_tst
-Z19 w1525893450
+Z19 w1525899733
 R4
 R5
 R7
@@ -119,29 +119,29 @@ VU5MIJ0LQDB6mf^hgZU?Vl1
 !s100 <NJ@iH1K7NOWKjTAWHl<23
 R10
 32
-Z22 !s110 1525893460
+R11
 !i10b 1
-Z23 !s108 1525893460.000000
-Z24 !s90 -work|work|Waveform14.vwf.vht|
-Z25 !s107 Waveform14.vwf.vht|
+Z22 !s108 1525899745.000000
+Z23 !s90 -work|work|Waveform14.vwf.vht|
+Z24 !s107 Waveform14.vwf.vht|
 !i113 1
 R15
 R16
 Ap1_arch
 R4
 R5
-Z26 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
+Z25 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
 l55
 L34
-Z27 VN4=SCLMf00nRIWa3DHj@72
-Z28 !s100 N8m<N9<l59U??B@^^MZCh1
+Z26 VN4=SCLMf00nRIWa3DHj@72
+Z27 !s100 N8m<N9<l59U??B@^^MZCh1
 R10
 32
-R22
+R11
 !i10b 1
+R22
 R23
 R24
-R25
 !i113 1
 R15
 R16

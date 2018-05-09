@@ -84,6 +84,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "OUTPUTCHECK[2]",
+					"strict" : false
+				},
+				{
 					"name" : "OUTPUTCHECK[1]",
 					"strict" : false
 				},
@@ -93,6 +97,10 @@
 				},
 				{
 					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[2]",
 					"strict" : false
 				},
 				{
@@ -116,10 +124,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "MCU_IN[2]",
-					"strict" : false
-				},
-				{
 					"name" : "MCU_IN[1]",
 					"strict" : false
 				},
@@ -133,14 +137,6 @@
 				},
 				{
 					"name" : "ADC_IN[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[10]",
 					"strict" : false
 				},
 				{
@@ -173,6 +169,14 @@
 				},
 				{
 					"name" : "ADC_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[10]",
 					"strict" : false
 				}
 			]

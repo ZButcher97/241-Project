@@ -1,5 +1,5 @@
 Analysis & Synthesis report for P1
-Wed May 09 20:13:56 2018
+Wed May 09 22:19:17 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -47,15 +47,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 09 20:13:56 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 09 22:19:17 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; P1                                          ;
 ; Top-level Entity Name              ; P1                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 178                                         ;
-;     Total combinational functions  ; 174                                         ;
-;     Dedicated logic registers      ; 94                                          ;
-; Total registers                    ; 94                                          ;
+; Total logic elements               ; 179                                         ;
+;     Total combinational functions  ; 173                                         ;
+;     Dedicated logic registers      ; 95                                          ;
+; Total registers                    ; 95                                          ;
 ; Total pins                         ; 53                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -183,20 +183,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 178       ;
+; Estimated Total logic elements              ; 179       ;
 ;                                             ;           ;
-; Total combinational functions               ; 174       ;
+; Total combinational functions               ; 173       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 64        ;
-;     -- 3 input functions                    ; 30        ;
+;     -- 4 input functions                    ; 65        ;
+;     -- 3 input functions                    ; 28        ;
 ;     -- <=2 input functions                  ; 80        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 143       ;
+;     -- normal mode                          ; 142       ;
 ;     -- arithmetic mode                      ; 31        ;
 ;                                             ;           ;
-; Total registers                             ; 94        ;
-;     -- Dedicated logic registers            ; 94        ;
+; Total registers                             ; 95        ;
+;     -- Dedicated logic registers            ; 95        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 53        ;
@@ -204,8 +204,8 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 94        ;
-; Total fan-out                               ; 866       ;
+; Maximum fan-out                             ; 95        ;
+; Total fan-out                               ; 869       ;
 ; Average fan-out                             ; 2.32      ;
 +---------------------------------------------+-----------+
 
@@ -215,29 +215,29 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
-; |P1                        ; 174 (0)             ; 94 (0)                    ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |P1                   ; P1          ; work         ;
+; |P1                        ; 173 (0)             ; 95 (0)                    ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |P1                   ; P1          ; work         ;
 ;    |Buffers:inst|          ; 165 (165)           ; 86 (86)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Buffers:inst      ; Buffers     ; work         ;
-;    |FIFO_CONFIG:inst1|     ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|FIFO_CONFIG:inst1 ; FIFO_CONFIG ; work         ;
+;    |FIFO_CONFIG:inst1|     ; 8 (8)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|FIFO_CONFIG:inst1 ; FIFO_CONFIG ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+---------------------------------------+-----------------------------------------+
-; Register name                         ; Reason for Removal                      ;
-+---------------------------------------+-----------------------------------------+
-; Buffers:inst|ADC_out[13]              ; Merged with Buffers:inst|ADC_out[12]    ;
-; Buffers:inst|BufferCheck[3]           ; Merged with Buffers:inst|BufferCheck[2] ;
-; Buffers:inst|BufferCount[3]           ; Merged with Buffers:inst|BufferCount[2] ;
-; FIFO_CONFIG:inst1|OUTPUT[6]           ; Stuck at GND due to stuck port data_in  ;
-; Buffers:inst|BufferCount[2]           ; Stuck at GND due to stuck port data_in  ;
-; Buffers:inst|ADC_out[14]              ; Stuck at GND due to stuck port data_in  ;
-; Buffers:inst|BufferCheck[2]           ; Stuck at GND due to stuck port data_in  ;
-; FIFO_CONFIG:inst1|SPACE_AVAILABLE[3]  ; Stuck at GND due to stuck port data_in  ;
-; FIFO_CONFIG:inst1|BUFFER_READ[3]      ; Stuck at GND due to stuck port data_in  ;
-; Total Number of Removed Registers = 9 ;                                         ;
-+---------------------------------------+-----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++----------------------------------------+-----------------------------------------+
+; Register name                          ; Reason for Removal                      ;
++----------------------------------------+-----------------------------------------+
+; Buffers:inst|ADC_out[13]               ; Merged with Buffers:inst|ADC_out[12]    ;
+; Buffers:inst|BufferCheck[3]            ; Merged with Buffers:inst|BufferCheck[2] ;
+; Buffers:inst|BufferCount[3]            ; Merged with Buffers:inst|BufferCount[2] ;
+; Buffers:inst|BufferCount[2]            ; Stuck at GND due to stuck port data_in  ;
+; Buffers:inst|ADC_out[14]               ; Stuck at GND due to stuck port data_in  ;
+; Buffers:inst|BufferCheck[2]            ; Stuck at GND due to stuck port data_in  ;
+; FIFO_CONFIG:inst1|SPACE_AVAILABLE[3]   ; Stuck at GND due to stuck port data_in  ;
+; FIFO_CONFIG:inst1|BUFFER_READ[3]       ; Stuck at GND due to stuck port data_in  ;
+; FIFO_CONFIG:inst1|OUTPUT[3..7]         ; Stuck at GND due to stuck port data_in  ;
+; Total Number of Removed Registers = 13 ;                                         ;
++----------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -255,12 +255,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 94    ;
+; Total registers                              ; 95    ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -283,12 +283,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|Buffers:inst|ADC_out[15]     ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |P1|Buffers:inst|ADC_out[11]     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[1]  ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |P1|Buffers:inst|clock_count[28] ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer1[10]     ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer3[8]      ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer2[7]      ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffers:inst|ADC_out[11]     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|Buffers:inst|BufferCheck[1]  ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |P1|Buffers:inst|clock_count[14] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[2]  ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer1[11]     ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer3[6]      ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffers:inst|Buffer2[1]      ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|Buffers:inst|clock_count[0]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
@@ -299,22 +300,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 53                          ;
-; cycloneiii_ff         ; 94                          ;
-;     ENA               ; 76                          ;
+; cycloneiii_ff         ; 95                          ;
+;     ENA               ; 77                          ;
 ;     ENA SCLR          ; 12                          ;
 ;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 175                         ;
+; cycloneiii_lcell_comb ; 174                         ;
 ;     arith             ; 31                          ;
 ;         2 data inputs ; 31                          ;
-;     normal            ; 144                         ;
+;     normal            ; 143                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 46                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 64                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 4.34                        ;
+; Average LUT depth     ; 4.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -323,7 +324,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -333,7 +334,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed May 09 20:13:09 2018
+    Info: Processing started: Wed May 09 22:18:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P1 -c P1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -353,8 +354,6 @@ Info (12128): Elaborating entity "Buffers" for hierarchy "Buffers:inst"
 Warning (10540): VHDL Signal Declaration warning at Buffers.vhd(24): used explicit default value for signal "Buffer4" because signal was never assigned a value File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/Buffers.vhd Line: 24
 Info (12128): Elaborating entity "FIFO_CONFIG" for hierarchy "FIFO_CONFIG:inst1"
 Warning (10540): VHDL Signal Declaration warning at FIFO_CONFIG.vhd(22): used explicit default value for signal "MAX" because signal was never assigned a value File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 22
-Warning (10034): Output port "OUTPUT[7]" at FIFO_CONFIG.vhd(13) has no driver File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 13
-Warning (10034): Output port "OUTPUT[5..2]" at FIFO_CONFIG.vhd(13) has no driver File: C:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ADC_OUT[14]" is stuck at GND
     Warning (13410): Pin "BUFFERCHEQ[3]" is stuck at GND
@@ -365,7 +364,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "OUTPUTCHECK[5]" is stuck at GND
     Warning (13410): Pin "OUTPUTCHECK[4]" is stuck at GND
     Warning (13410): Pin "OUTPUTCHECK[3]" is stuck at GND
-    Warning (13410): Pin "OUTPUTCHECK[2]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -373,10 +371,10 @@ Info (21057): Implemented 232 device resources after synthesis - the final resou
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 179 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 733 megabytes
-    Info: Processing ended: Wed May 09 20:13:56 2018
-    Info: Elapsed time: 00:00:47
-    Info: Total CPU time (on all processors): 00:01:33
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 718 megabytes
+    Info: Processing ended: Wed May 09 22:19:17 2018
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:58
 
 
