@@ -8,11 +8,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_OUT[12]",
+					"name" : "ADC_OUT[14]",
 					"strict" : false
 				},
 				{
@@ -64,23 +60,151 @@
 					"strict" : false
 				},
 				{
-					"name" : "BUFFERCHEQ[1]",
+					"name" : "Buffer1[11]",
 					"strict" : false
 				},
 				{
-					"name" : "BUFFERCHEQ[0]",
+					"name" : "Buffer1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer3[0]",
 					"strict" : false
 				},
 				{
 					"name" : "OUT2MCU[2]",
-					"strict" : false
-				},
-				{
-					"name" : "OUT2MCU[1]",
-					"strict" : false
-				},
-				{
-					"name" : "OUT2MCU[0]",
 					"strict" : false
 				},
 				{
@@ -136,39 +260,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_IN[7]",
+					"name" : "ADC_IN[10]",
 					"strict" : false
 				},
 				{
@@ -176,7 +268,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "ADC_IN[10]",
+					"name" : "ADC_IN[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_IN[0]",
 					"strict" : false
 				}
 			]
