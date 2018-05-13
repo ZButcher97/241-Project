@@ -213,7 +213,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 288 144 544 224)
+	(rect 288 168 544 248)
 	(text "FIFO_CONFIG" (rect 5 0 80 12)(font "Arial" ))
 	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
 	(port
@@ -250,7 +250,7 @@ agreement for further details.
 )
 (symbol
 	(rect 288 272 520 416)
-	(text "Buffer2" (rect 5 0 42 12)(font "Arial" ))
+	(text "Buffer3" (rect 5 0 42 12)(font "Arial" ))
 	(text "inst" (rect 8 128 25 140)(font "Arial" ))
 	(port
 		(pt 0 32)
@@ -313,11 +313,6 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 240 176)
-	(pt 288 176)
-	(bus)
-)
-(connector
 	(pt 264 128)
 	(pt 264 320)
 	(bus)
@@ -333,26 +328,12 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 288 192)
-	(pt 232 192)
-)
-(connector
 	(pt 288 304)
 	(pt 232 304)
 )
 (connector
 	(pt 568 128)
 	(pt 264 128)
-	(bus)
-)
-(connector
-	(pt 544 176)
-	(pt 568 176)
-	(bus)
-)
-(connector
-	(pt 544 192)
-	(pt 592 192)
 	(bus)
 )
 (connector
@@ -391,17 +372,56 @@ agreement for further details.
 	(bus)
 )
 (connector
+	(pt 280 176)
+	(pt 280 200)
+	(bus)
+)
+(connector
+	(pt 240 176)
+	(pt 280 176)
+	(bus)
+)
+(connector
+	(pt 280 200)
+	(pt 288 200)
+	(bus)
+)
+(connector
+	(pt 232 216)
+	(pt 288 216)
+)
+(connector
+	(pt 568 200)
+	(pt 544 200)
+	(bus)
+)
+(connector
+	(pt 552 192)
+	(pt 552 216)
+	(bus)
+)
+(connector
+	(pt 592 192)
+	(pt 552 192)
+	(bus)
+)
+(connector
+	(pt 552 216)
+	(pt 544 216)
+	(bus)
+)
+(connector
 	(pt 568 128)
 	(pt 568 152)
 	(bus)
 )
 (connector
 	(pt 568 152)
-	(pt 568 176)
+	(pt 568 200)
 	(bus)
 )
 (connector
-	(pt 232 192)
+	(pt 232 216)
 	(pt 232 264)
 )
 (connector

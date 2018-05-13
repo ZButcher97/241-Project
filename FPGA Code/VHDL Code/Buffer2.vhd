@@ -14,7 +14,7 @@ entity Buffer2 is
 		buffer10		: out std_logic_vector(11 downto 0);
 		buffer20		: out std_logic_vector(11 downto 0);
 		buffer30		: out std_logic_vector(11 downto 0);
-		--Buffer40		: out std_logic_vector(11 downto 0)
+		--buffer40		: out std_logic_vector(11 downto 0)
 		clock_counter : out std_logic_vector(3 downto 0)
 	);
 
@@ -62,27 +62,27 @@ begin
 							if (buffer1 /= ADC_in) then
 								
 								buffer2 <= ADC_in;
-								buffer3 <= "000000000000";
-								count <= count + 1;
+								count <= 2;
 							
 							end if;
 						
-						end if;
 						
-						if (count = 2) then
+						elsif (count = 2) then
 							if (buffer2 /= ADC_in) then
 						
 								buffer3 <= ADC_in;
 								count <= 1;
 								
 							end if;
-						end if;
+							
+						end if; --count
+						
 						
 						buffer10 <= buffer1;
 						buffer20 <= buffer2;
 						buffer30 <= buffer3;
 						
-						clock_counter <= conv_std_logic_vector(clock_count,4);
+						clock_counter <= conv_std_logic_vector(count,4);
 						
 						if (FIFO_IN(2) = '1') then --Load = 1
 

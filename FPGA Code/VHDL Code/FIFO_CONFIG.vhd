@@ -34,14 +34,14 @@ begin
 				if (MCU_IN = "00000000") then --IF no data required
 				
 					
-					OUTPUT(1) <= Latch;  --Continue sampling data and storing in buffers
+					OUTPUT(1) <= Latch;  	--Continue sampling data and storing in buffers
 					OUTPUT(2) <= '0';			--Don't load ADC data onto MCU
-					--OUTPUT(6) <= '0';			--Overflow = 0
+					--OUTPUT(6) <= '0';		--Overflow = 0
 					
-				end if;
+				--end if;
 				
 				
-				if (MCU_IN = "00000001") then  --IF RESET = 1
+				elsif (MCU_IN = "00000001") then  --IF RESET = 1
 					
 					SPACE_AVAILABLE <= MAX; --Clear the buffers
 					OUTPUT(0) <= '1';			--Set Reset flag to 1
@@ -50,10 +50,10 @@ begin
 					OUTPUT(6) <= '0';			--Overflow = 0
 					Latch <= '0';
 					
-				end if;
+				--end if;
 				
 				
-				if (MCU_IN = "00000010") then  --IF Sampling = 1
+				elsif (MCU_IN = "00000010") then  --IF Sampling = 1
 					
 					OUTPUT(0) <= '0';
 					OUTPUT(1) <= '1';			--Set Sampling to 1
@@ -61,10 +61,10 @@ begin
 					--OUTPUT(6) <= '0';		--Overflow = 0
 					Latch <= '1';
 					
-				end if;
+				--end if;
 				
 				
-				if (MCU_IN = "00000100") then --IF MCU asks to load data
+				elsif (MCU_IN = "00000100") then --IF MCU asks to load data
 				
 					OUTPUT(0) <= '0';			--Set RESET flag to 0
 					OUTPUT(1) <= '1';			--Set Sampling to 1

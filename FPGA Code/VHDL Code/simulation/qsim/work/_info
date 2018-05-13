@@ -9,14 +9,14 @@ z2
 cModel Technology
 dE:/ELEC241/P1/VHDL Code/simulation/qsim
 Ehard_block
-Z0 w1526136231
+Z0 w1526225358
 Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 K`kJb<]?z4U5EbkG_:lMO3
 Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z6 DPx10 cycloneive 21 cycloneive_components 0 22 HFZ8mBI5?[8TM9e2YGWCa2
-Z7 dC:/Users/georg/Desktop/Github/P1/FPGA Code/VHDL Code/simulation/qsim
+Z7 dC:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/simulation/qsim
 Z8 8P1.vho
 Z9 FP1.vho
 l0
@@ -25,9 +25,9 @@ VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1526136235
+Z11 !s110 1526225359
 !i10b 1
-Z12 !s108 1526136235.000000
+Z12 !s108 1526225359.000000
 Z13 !s90 -work|work|P1.vho|
 Z14 !s107 P1.vho|
 !i113 1
@@ -92,10 +92,10 @@ R4
 R5
 R18
 DEx4 work 2 p1 0 22 Sd9KcCoK_0AbDhZMb`gcb2
-l484
+l478
 L205
-VR^9]1:WDBddKQ<cDXn2T20
-!s100 F=2ZHUCU5@ND=a_nO^amm0
+VG4Ed8TGNB7MalChL7bB=:3
+!s100 K`hJB<BT8g]f<lH9iU3NY3
 R10
 32
 R11
@@ -107,41 +107,41 @@ R14
 R15
 R16
 Ep1_vhd_vec_tst
-Z19 w1526136224
+Z19 w1526225357
 R4
 R5
 R7
-Z20 8Waveform17.vwf.vht
-Z21 FWaveform17.vwf.vht
+Z20 8Waveform18.vwf.vht
+Z21 FWaveform18.vwf.vht
 l0
 L32
 VU5MIJ0LQDB6mf^hgZU?Vl1
 !s100 <NJ@iH1K7NOWKjTAWHl<23
 R10
 32
-Z22 !s110 1526136236
+R11
 !i10b 1
 R12
-Z23 !s90 -work|work|Waveform17.vwf.vht|
-Z24 !s107 Waveform17.vwf.vht|
+Z22 !s90 -work|work|Waveform18.vwf.vht|
+Z23 !s107 Waveform18.vwf.vht|
 !i113 1
 R15
 R16
 Ap1_arch
 R4
 R5
-Z25 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
+Z24 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
 l65
 L34
-Z26 V>@U5MoJzXY`g0zeIi2hQf3
-Z27 !s100 z6ToheiP1h5=QoBYlg6kV1
+Z25 VR8QkcnQB9`G_1BHeQ8E6[0
+Z26 !s100 iYedRMSYF>`]<d^U<?;;o2
 R10
 32
-R22
+R11
 !i10b 1
 R12
+R22
 R23
-R24
 !i113 1
 R15
 R16
