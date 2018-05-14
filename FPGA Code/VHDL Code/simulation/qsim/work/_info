@@ -9,7 +9,7 @@ z2
 cModel Technology
 dE:/ELEC241/P1/VHDL Code/simulation/qsim
 Ehard_block
-Z0 w1526311923
+Z0 w1526314960
 Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 K`kJb<]?z4U5EbkG_:lMO3
 Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1526311924
+Z11 !s110 1526314961
 !i10b 1
-Z12 !s108 1526311924.000000
+Z12 !s108 1526314961.000000
 Z13 !s90 -work|work|P1.vho|
 Z14 !s107 P1.vho|
 !i113 1
@@ -56,27 +56,27 @@ R14
 R15
 R16
 Ep1
-R0
+Z17 w1526325644
 R2
 R6
 R1
-Z17 DPx6 altera 11 dffeas_pack 0 22 zWCf]NF6heG=Dhmc@B0=T2
+Z18 DPx6 altera 11 dffeas_pack 0 22 zWCf]NF6heG=Dhmc@B0=T2
 R3
 R4
 R5
-Z18 DPx6 altera 28 altera_primitives_components 0 22 _Q9E2TD5YB<<@P0[5jYTG0
+Z19 DPx6 altera 28 altera_primitives_components 0 22 _Q9E2TD5YB<<@P0[5jYTG0
 R7
 R8
 R9
 l0
-L80
-VZeTAHgOozmJ0Y:zBMNo0g3
-!s100 :c;a2EbHfMdE<zP5=@lj@1
+L37
+Vo0azRc1Gzl3=I5Pz5VSJ43
+!s100 mS8mILRhd3cP7fBO78Vg=2
 R10
 32
-R11
+Z20 !s110 1526325645
 !i10b 1
-R12
+Z21 !s108 1526325645.000000
 R13
 R14
 !i113 1
@@ -86,62 +86,62 @@ Astructure
 R2
 R6
 R1
-R17
+R18
 R3
 R4
 R5
-R18
-DEx4 work 2 p1 0 22 ZeTAHgOozmJ0Y:zBMNo0g3
-l574
-L206
-V8e_f8J;>XSMSKT7X>[A9G3
-!s100 0`=WFb8i?h3>HCUKb8QUm0
+R19
+DEx4 work 2 p1 0 22 o0azRc1Gzl3=I5Pz5VSJ43
+l629
+L61
+VL@amGIUISL[biT@^gHjjF2
+!s100 c:GhnlZDlkAc^M=m_Y79z1
 R10
 32
-R11
+R20
 !i10b 1
-R12
+R21
 R13
 R14
 !i113 1
 R15
 R16
 Ep1_vhd_vec_tst
-Z19 w1526311922
+Z22 w1526325643
 R4
 R5
 R7
-Z20 8Waveform18.vwf.vht
-Z21 FWaveform18.vwf.vht
+Z23 8Waveform19.vwf.vht
+Z24 FWaveform19.vwf.vht
 l0
 L32
 VU5MIJ0LQDB6mf^hgZU?Vl1
 !s100 <NJ@iH1K7NOWKjTAWHl<23
 R10
 32
-R11
+R20
 !i10b 1
-R12
-Z22 !s90 -work|work|Waveform18.vwf.vht|
-Z23 !s107 Waveform18.vwf.vht|
+R21
+Z25 !s90 -work|work|Waveform19.vwf.vht|
+Z26 !s107 Waveform19.vwf.vht|
 !i113 1
 R15
 R16
 Ap1_arch
 R4
 R5
-Z24 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
-l67
+Z27 DEx4 work 14 p1_vhd_vec_tst 0 22 U5MIJ0LQDB6mf^hgZU?Vl1
+l73
 L34
-V=kJC:2QKfH`=[`9>CO>hR2
-!s100 bgFDfGEYL1:a@S0cj0NG:0
+VBjZnmPo?BCWdfdeP399dZ3
+!s100 8KPA@4h0L;QoSo<CDe?4i2
 R10
 32
-R11
+R20
 !i10b 1
-R12
-R22
-R23
+R21
+R25
+R26
 !i113 1
 R15
 R16

@@ -17,8 +17,12 @@ entity Buffer3 is
 		buffer20				: out std_logic_vector(11 downto 0);
 		buffer30				: out std_logic_vector(11 downto 0);
 		buffer40				: out std_logic_vector(11 downto 0);
-		clock_counter 		: out std_logic_vector(3 downto 0);
-		clock_shifter 		: out std_logic_vector(3 downto 0);
+		buffer50				: out std_logic_vector(11 downto 0);
+		buffer60				: out std_logic_vector(11 downto 0);
+		buffer70				: out std_logic_vector(11 downto 0);
+		buffer80				: out std_logic_vector(11 downto 0);
+		buffer90				: out std_logic_vector(11 downto 0);
+		clock_counter 		: out std_logic_vector(4 downto 0);
 		AVAILABLE			: out std_logic
 	);
 
@@ -136,9 +140,209 @@ begin
 						
 						
 						if (counter = 7) then
-							
+							if (buffer1(59 downto 48) = "000000000000") then --if 5 = '0'
+								
+								buffer1(59 downto 48) <= ADC_in;					 --5 = data
+								counter <= 8;
 								BufferCount <= 4;
 								
+							end if;
+						end if;
+						
+						
+						if (counter = 8) then
+							if (buffer1(59 downto 48) = buffer1(47 downto 36)) then --if 5 = 4
+								
+								buffer1(59 downto 48) <= "000000000000";				  --5 = '0'
+								counter <= 7;
+								
+							elsif (buffer1(59 downto 48) /= buffer1(47 downto 36)) then
+							
+								counter <= 9;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 9) then
+							if (buffer1(71 downto 60) = "000000000000") then --if 6 = '0'
+								
+								buffer1(71 downto 60) <= ADC_in;					 --6 = data
+								counter <= 10;
+								BufferCount <= 5;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 10) then
+							if (buffer1(71 downto 60) = buffer1(59 downto 48)) then --if 6 = 5
+								
+								buffer1(71 downto 60) <= "000000000000";				  --6 = '0'
+								counter <= 9;
+								
+							elsif (buffer1(71 downto 60) /= buffer1(59 downto 48)) then
+							
+								counter <= 11;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 11) then
+							if (buffer1(83 downto 72) = "000000000000") then --if 7 = '0'
+								
+								buffer1(83 downto 72) <= ADC_in;					 --7 = data
+								counter <= 12;
+								BufferCount <= 6;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 12) then
+							if (buffer1(83 downto 72) = buffer1(71 downto 60)) then --if 7 = 6
+								
+								buffer1(83 downto 72) <= "000000000000";				  --7 = '0'
+								counter <= 11;
+								
+							elsif (buffer1(83 downto 72) /= buffer1(71 downto 60)) then
+							
+								counter <= 13;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 13) then
+							if (buffer1(95 downto 84) = "000000000000") then --if 8 = '0'
+								
+								buffer1(95 downto 84) <= ADC_in;					 --8 = data
+								counter <= 14;
+								BufferCount <= 7;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 14) then
+							if (buffer1(95 downto 84) = buffer1(83 downto 72)) then --if 8 = 7
+								
+								buffer1(95 downto 84) <= "000000000000";				  --8 = '0'
+								counter <= 13;
+								
+							elsif (buffer1(95 downto 84) /= buffer1(83 downto 72)) then
+							
+								counter <= 15;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 15) then
+							if (buffer1(107 downto 96) = "000000000000") then --if 9 = '0'
+								
+								buffer1(107 downto 96) <= ADC_in;					 --9 = data
+								counter <= 16;
+								BufferCount <= 8;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 16) then
+							if (buffer1(107 downto 96) = buffer1(95 downto 84)) then --if 9 = 8
+								
+								buffer1(107 downto 96) <= "000000000000";				  --9 = '0'
+								counter <= 15;
+								
+							elsif (buffer1(107 downto 96) /= buffer1(95 downto 84)) then
+							
+								counter <= 17;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 17) then
+							if (buffer1(119 downto 108) = "000000000000") then --if 10 = '0'
+								
+								buffer1(119 downto 108) <= ADC_in;					 --10 = data
+								counter <= 18;
+								BufferCount <= 9;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 18) then
+							if (buffer1(119 downto 108) = buffer1(107 downto 96)) then --if 10 = 9
+								
+								buffer1(119 downto 108) <= "000000000000";				  --10 = '0'
+								counter <= 17;
+								
+							elsif (buffer1(119 downto 108) /= buffer1(107 downto 96)) then
+							
+								counter <= 19;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 19) then
+							if (buffer1(131 downto 120) = "000000000000") then --if 11 = '0'
+								
+								buffer1(131 downto 120) <= ADC_in;					 --11 = data
+								counter <= 18;
+								BufferCount <= 10;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 20) then
+							if (buffer1(131 downto 120) = buffer1(119 downto 108)) then --if 11 = 10
+								
+								buffer1(131 downto 120) <= "000000000000";				  --11 = '0'
+								counter <= 19;
+								
+							elsif (buffer1(131 downto 120) /= buffer1(119 downto 108)) then
+							
+								counter <= 21;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 21) then
+							if (buffer1(143 downto 132) = "000000000000") then --if 12 = '0'
+								
+								buffer1(143 downto 132) <= ADC_in;					 --12 = data
+								counter <= 22;
+								BufferCount <= 11;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 22) then
+							if (buffer1(143 downto 132) = buffer1(131 downto 120)) then --if 12 = 11
+								
+								buffer1(143 downto 132) <= "000000000000";				  --12 = '0'
+								counter <= 21;
+								
+							elsif (buffer1(143 downto 132) /= buffer1(131 downto 120)) then
+							
+								counter <= 23;
+								
+							end if;
+						end if;
+						
+						
+						if (counter = 23) then
+
+								BufferCount <= 12;--ALL BUFFERS FULL
+
 						end if;
 						
 						
@@ -146,68 +350,55 @@ begin
 						
 							ADC_out <= buffer1(11 downto 0); --"1111" & 
 							bufferout <= buffer1;
-							
---							if(shifter = 0) then
---							
---								buffer1(11 downto 0) <= buffer1(23 downto 12); --2 into 1
---								shifter <= 1;
---								
---								if (buffer1(11 downto 0) = "000000000000") then --if 1 = '0'
---								
---									counter <= 0;
---								
---								end if;
---							end if;
---							
---							
---							if(shifter = 1) then
---							
---								buffer1(23 downto 12) <= buffer1(35 downto 24); -- 3 into 2
---								shifter <= 2;												--2 becomes 0
---								
---								if (buffer1(23 downto 12) = "000000000000") then --if 2 = '0'
---								
---									counter <= 1;
---								
---								end if;
---							end if;
---							
---							
---							if(shifter = 2) then
---							
---								buffer1(35 downto 24) <= buffer1(47 downto 36); -- 4 into 3
---								shifter <= 3;												--3 becomes 0
---								
---								if (buffer1(35 downto 24) = "000000000000") then --if 3 = '0'
---								
---									counter <= 2;
---								
---								end if;
---							end if;
 						
 						end if; --load = 1
 						
 						
-						if (FIFO_IN(2) = '0') then --load = 0
-						
-							shifter <= 0;
- 
-						end if; --load = 0
-						
-						
-						if (FIFO_IN(3) = '1') then
+						if (FIFO_IN(3) = '1') then --Shift bits
 						
 							buffer1 <= bufferin;
+							
+							if (buffer1(11 downto 0) = "000000000000") then --1=0
+								counter <= 0;
+							elsif (buffer1(23 downto 12) = "000000000000") then --2=0
+								counter <= 1;
+							elsif (buffer1(35 downto 24) = "000000000000") then --3=0
+								counter <= 3;
+							elsif (buffer1(47 downto 36) = "000000000000") then --4=0
+								counter <= 5;
+							elsif (buffer1(59 downto 48) = "000000000000") then --5=0
+								counter <= 7;
+							elsif (buffer1(71 downto 60) = "000000000000") then --6=0
+								counter <= 9;
+							elsif (buffer1(83 downto 72) = "000000000000") then --7=0
+								counter <= 11;
+							elsif (buffer1(95 downto 84) = "000000000000") then --8=0
+								counter <= 13;
+							elsif (buffer1(107 downto 96) = "000000000000") then --9=0
+								counter <= 15;
+							elsif (buffer1(119 downto 108) = "000000000000") then --10=0
+								counter <= 17;
+							elsif (buffer1(131 downto 120) = "000000000000") then --11=0
+								counter <= 19;
+							elsif (buffer1(143 downto 132) = "000000000000") then --12=0
+								counter <= 21;
+							end if;
 						
 						end if;						
 						
-						clock_counter <= conv_std_logic_vector(counter,4);
-						clock_shifter <= conv_std_logic_vector(shifter,4);
+						clock_counter <= conv_std_logic_vector(counter,5);
 						BufferCheck <= conv_std_logic_vector(BufferCount,4);
-						buffer10 <= buffer1(11 downto 0);
-						buffer20 <= buffer1(23 downto 12);
-						buffer30 <= buffer1(35 downto 24);
-						buffer40 <= buffer1(47 downto 36);
+						
+						buffer10  <= buffer1(11 downto 0);
+						buffer20  <= buffer1(23 downto 12);
+						buffer30  <= buffer1(35 downto 24);
+						buffer40  <= buffer1(47 downto 36);
+						buffer50  <= buffer1(59 downto 48);
+						buffer60  <= buffer1(71 downto 60);
+						buffer70  <= buffer1(83 downto 72);
+						buffer80  <= buffer1(95 downto 84);
+						buffer90  <= buffer1(107 downto 96);
+
 						
 					end if; --if sampling=1
 				end if; --if reset=0	
