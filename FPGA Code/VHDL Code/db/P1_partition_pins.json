@@ -196,6 +196,66 @@
 					"strict" : false
 				},
 				{
+					"name" : "Buffer4[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Buffer4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BUFFERCHEQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BUFFERCHEQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BUFFERCHEQ[0]",
+					"strict" : false
+				},
+				{
 					"name" : "Clock_Count[2]",
 					"strict" : false
 				},
@@ -208,7 +268,31 @@
 					"strict" : false
 				},
 				{
+					"name" : "OUT2MCU[3]",
+					"strict" : false
+				},
+				{
 					"name" : "OUT2MCU[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OUT2MCU[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OUT2MCU[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUTCHECK[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUTCHECK[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OUTPUTCHECK[3]",
 					"strict" : false
 				},
 				{
@@ -228,6 +312,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "MCU_IN[3]",
+					"strict" : false
+				},
+				{
 					"name" : "MCU_IN[7]",
 					"strict" : false
 				},
@@ -244,19 +332,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "MCU_IN[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MCU_IN[0]",
-					"strict" : false
-				},
-				{
 					"name" : "MCU_IN[2]",
 					"strict" : false
 				},
 				{
 					"name" : "MCU_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MCU_IN[0]",
 					"strict" : false
 				},
 				{

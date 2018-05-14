@@ -70,106 +70,106 @@ CHIP  "P1"  ASSIGNED TO AN: EP4CE22F17C6
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-Buffer2[11]                  : A2        : output : 2.5 V             :         : 8         : N              
-Buffer2[9]                   : A3        : output : 2.5 V             :         : 8         : N              
-Buffer3[10]                  : A4        : output : 2.5 V             :         : 8         : N              
-Buffer2[7]                   : A5        : output : 2.5 V             :         : 8         : N              
-Buffer2[4]                   : A6        : output : 2.5 V             :         : 8         : N              
-ADC_OUT[11]                  : A7        : output : 2.5 V             :         : 8         : N              
+Buffer2[6]                   : A2        : output : 2.5 V             :         : 8         : N              
+Clock_Count[3]               : A3        : output : 2.5 V             :         : 8         : N              
+Buffer4[5]                   : A4        : output : 2.5 V             :         : 8         : N              
+Buffer1[10]                  : A5        : output : 2.5 V             :         : 8         : N              
+OUTPUTCHECK[7]               : A6        : output : 2.5 V             :         : 8         : N              
+Buffer2[7]                   : A7        : output : 2.5 V             :         : 8         : N              
 GND+                         : A8        :        :                   :         : 8         :                
 ADC_IN[1]                    : A9        : input  : 2.5 V             :         : 7         : N              
-Buffer3[4]                   : A10       : output : 2.5 V             :         : 7         : N              
-Clock_Count[1]               : A11       : output : 2.5 V             :         : 7         : N              
-Buffer3[0]                   : A12       : output : 2.5 V             :         : 7         : N              
-Buffer2[3]                   : A13       : output : 2.5 V             :         : 7         : N              
-Buffer3[5]                   : A14       : output : 2.5 V             :         : 7         : N              
-ADC_IN[9]                    : A15       : input  : 2.5 V             :         : 7         : N              
+Buffer3[3]                   : A10       : output : 2.5 V             :         : 7         : N              
+Buffer3[7]                   : A11       : output : 2.5 V             :         : 7         : N              
+ADC_IN[3]                    : A12       : input  : 2.5 V             :         : 7         : N              
+Buffer2[4]                   : A13       : output : 2.5 V             :         : 7         : N              
+Buffer1[9]                   : A14       : output : 2.5 V             :         : 7         : N              
+Buffer4[2]                   : A15       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-BUFFERCHEQ[0]                : B1        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-Buffer3[11]                  : B4        : output : 2.5 V             :         : 8         : N              
-ADC_IN[8]                    : B5        : input  : 2.5 V             :         : 8         : N              
-Buffer1[6]                   : B6        : output : 2.5 V             :         : 8         : N              
-Buffer3[2]                   : B7        : output : 2.5 V             :         : 8         : N              
+Buffer3[10]                  : B4        : output : 2.5 V             :         : 8         : N              
+Buffer3[2]                   : B5        : output : 2.5 V             :         : 8         : N              
+Buffer2[10]                  : B6        : output : 2.5 V             :         : 8         : N              
+Buffer3[8]                   : B7        : output : 2.5 V             :         : 8         : N              
 GND+                         : B8        :        :                   :         : 8         :                
 ADC_IN[0]                    : B9        : input  : 2.5 V             :         : 7         : N              
-ADC_IN[6]                    : B10       : input  : 2.5 V             :         : 7         : N              
-ADC_IN[3]                    : B11       : input  : 2.5 V             :         : 7         : N              
-Clock_Count[2]               : B12       : output : 2.5 V             :         : 7         : N              
-Buffer2[6]                   : B13       : output : 2.5 V             :         : 7         : N              
-Buffer3[7]                   : B14       : output : 2.5 V             :         : 7         : N              
+ADC_IN[10]                   : B10       : input  : 2.5 V             :         : 7         : N              
+Buffer1[7]                   : B11       : output : 2.5 V             :         : 7         : N              
+Buffer4[3]                   : B12       : output : 2.5 V             :         : 7         : N              
+Buffer3[11]                  : B13       : output : 2.5 V             :         : 7         : N              
+ADC_IN[5]                    : B14       : input  : 2.5 V             :         : 7         : N              
 GND                          : B15       : gnd    :                   :         :           :                
-Buffer1[10]                  : B16       : output : 2.5 V             :         : 6         : N              
+ADC_OUT[11]                  : B16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
-OUTPUTCHECK[3]               : C2        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
 VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
 GND                          : C5        : gnd    :                   :         :           :                
-ADC_OUT[6]                   : C6        : output : 2.5 V             :         : 8         : N              
+Buffer3[9]                   : C6        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-ADC_OUT[10]                  : C8        : output : 2.5 V             :         : 8         : N              
-Buffer2[8]                   : C9        : output : 2.5 V             :         : 7         : N              
+Buffer4[0]                   : C8        : output : 2.5 V             :         : 8         : N              
+Buffer1[4]                   : C9        : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-ADC_IN[4]                    : C11       : input  : 2.5 V             :         : 7         : N              
+ADC_IN[7]                    : C11       : input  : 2.5 V             :         : 7         : N              
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
-ADC_OUT[4]                   : C14       : output : 2.5 V             :         : 7         : N              
-ADC_IN[7]                    : C15       : input  : 2.5 V             :         : 6         : N              
-ADC_IN[2]                    : C16       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
+MCU_IN[6]                    : C14       : input  : 2.5 V             :         : 7         : N              
+ADC_OUT[7]                   : C15       : output : 2.5 V             :         : 6         : N              
+ADC_OUT[6]                   : C16       : output : 2.5 V             :         : 6         : N              
+ADC_IN[8]                    : D1        : input  : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
 VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
-Buffer3[9]                   : D5        : output : 2.5 V             :         : 8         : N              
-ADC_IN[5]                    : D6        : input  : 2.5 V             :         : 8         : N              
+Clock_Shift[2]               : D5        : output : 2.5 V             :         : 8         : N              
+Buffer1[11]                  : D6        : output : 2.5 V             :         : 8         : N              
 GND                          : D7        : gnd    :                   :         :           :                
-Buffer2[1]                   : D8        : output : 2.5 V             :         : 8         : N              
-Buffer2[10]                  : D9        : output : 2.5 V             :         : 7         : N              
+ADC_IN[6]                    : D8        : input  : 2.5 V             :         : 8         : N              
+Buffer2[0]                   : D9        : output : 2.5 V             :         : 7         : N              
 GND                          : D10       : gnd    :                   :         :           :                
-Buffer1[2]                   : D11       : output : 2.5 V             :         : 7         : N              
-Buffer1[5]                   : D12       : output : 2.5 V             :         : 7         : N              
+Buffer3[4]                   : D11       : output : 2.5 V             :         : 7         : N              
+MCU_IN[0]                    : D12       : input  : 2.5 V             :         : 7         : N              
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
-ADC_OUT[3]                   : D14       : output : 2.5 V             :         : 7         : N              
-ADC_OUT[1]                   : D15       : output : 2.5 V             :         : 6         : N              
-Buffer3[1]                   : D16       : output : 2.5 V             :         : 6         : N              
+MCU_IN[5]                    : D14       : input  : 2.5 V             :         : 7         : N              
+ADC_OUT[3]                   : D15       : output : 2.5 V             :         : 6         : N              
+ADC_OUT[5]                   : D16       : output : 2.5 V             :         : 6         : N              
 CLK                          : E1        : input  : 2.5 V             :         : 1         : N              
 GND                          : E2        : gnd    :                   :         :           :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 GNDA3                        : E5        : gnd    :                   :         :           :                
-ADC_IN[11]                   : E6        : input  : 2.5 V             :         : 8         : N              
-ADC_IN[10]                   : E7        : input  : 2.5 V             :         : 8         : N              
-Buffer2[5]                   : E8        : output : 2.5 V             :         : 8         : N              
-Buffer3[8]                   : E9        : output : 2.5 V             :         : 7         : N              
-Buffer3[3]                   : E10       : output : 2.5 V             :         : 7         : N              
-Buffer3[6]                   : E11       : output : 2.5 V             :         : 7         : N              
+Buffer1[2]                   : E6        : output : 2.5 V             :         : 8         : N              
+Buffer3[1]                   : E7        : output : 2.5 V             :         : 8         : N              
+Buffer4[6]                   : E8        : output : 2.5 V             :         : 8         : N              
+Buffer2[2]                   : E9        : output : 2.5 V             :         : 7         : N              
+ADC_IN[4]                    : E10       : input  : 2.5 V             :         : 7         : N              
+ADC_IN[2]                    : E11       : input  : 2.5 V             :         : 7         : N              
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                
 VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
 GND+                         : E15       :        :                   :         : 6         :                
 GND+                         : E16       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F2        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
+ADC_OUT[10]                  : F1        : output : 2.5 V             :         : 1         : N              
+Buffer1[8]                   : F2        : output : 2.5 V             :         : 1         : N              
+Buffer4[4]                   : F3        : output : 2.5 V             :         : 1         : N              
 nSTATUS                      : F4        :        :                   :         : 1         :                
 VCCA3                        : F5        : power  :                   : 2.5V    :           :                
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
-Buffer1[11]                  : F8        : output : 2.5 V             :         : 8         : N              
-Clock_Count[0]               : F9        : output : 2.5 V             :         : 7         : N              
+Buffer3[6]                   : F8        : output : 2.5 V             :         : 8         : N              
+ADC_IN[11]                   : F9        : input  : 2.5 V             :         : 7         : N              
 GND                          : F10       : gnd    :                   :         :           :                
 VCCINT                       : F11       : power  :                   : 1.2V    :           :                
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
-ADC_OUT[2]                   : F13       : output : 2.5 V             :         : 6         : N              
-Buffer1[1]                   : F14       : output : 2.5 V             :         : 6         : N              
-ADC_OUT[5]                   : F15       : output : 2.5 V             :         : 6         : N              
+ADC_OUT[8]                   : F13       : output : 2.5 V             :         : 6         : N              
+OUTPUTCHECK[1]               : F14       : output : 2.5 V             :         : 6         : N              
+Buffer1[3]                   : F15       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
-Clock_Count[3]               : G2        : output : 2.5 V             :         : 1         : N              
+Clock_Count[0]               : G1        : output : 2.5 V             :         : 1         : N              
+ADC_OUT[1]                   : G2        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+Buffer3[5]                   : G5        : output : 2.5 V             :         : 1         : N              
 VCCINT                       : G6        : power  :                   : 1.2V    :           :                
 VCCINT                       : G7        : power  :                   : 1.2V    :           :                
 VCCINT                       : G8        : power  :                   : 1.2V    :           :                
@@ -179,8 +179,8 @@ GND                          : G11       : gnd    :                   :         
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
-Buffer1[4]                   : G15       : output : 2.5 V             :         : 6         : N              
-Buffer2[2]                   : G16       : output : 2.5 V             :         : 6         : N              
+OUTPUTCHECK[0]               : G15       : output : 2.5 V             :         : 6         : N              
+OUTPUTCHECK[3]               : G16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
 TCK                          : H3        : input  :                   :         : 1         :                
@@ -209,15 +209,15 @@ GND                          : J9        : gnd    :                   :         
 GND                          : J10       : gnd    :                   :         :           :                
 GND                          : J11       : gnd    :                   :         :           :                
 VCCINT                       : J12       : power  :                   : 1.2V    :           :                
-Buffer2[0]                   : J13       : output : 2.5 V             :         : 5         : N              
-Buffer1[3]                   : J14       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 5         :                
-ADC_OUT[7]                   : J16       : output : 2.5 V             :         : 5         : N              
+MCU_IN[4]                    : J13       : input  : 2.5 V             :         : 5         : N              
+OUTPUTCHECK[2]               : J14       : output : 2.5 V             :         : 5         : N              
+Buffer1[0]                   : J15       : output : 2.5 V             :         : 5         : N              
+Buffer1[6]                   : J16       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 2         :                
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
-Buffer4[4]                   : K5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 2         :                
 GND                          : K6        : gnd    :                   :         :           :                
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
 GND                          : K8        : gnd    :                   :         :           :                
@@ -227,101 +227,101 @@ VCCINT                       : K11       : power  :                   : 1.2V    
 GND                          : K12       : gnd    :                   :         :           :                
 GND                          : K13       : gnd    :                   :         :           :                
 VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K15       :        :                   :         : 5         :                
-ADC_OUT[12]                  : K16       : output : 2.5 V             :         : 5         : N              
-Buffer4[3]                   : L1        : output : 2.5 V             :         : 2         : N              
+OUT2MCU[2]                   : K15       : output : 2.5 V             :         : 5         : N              
+OUT2MCU[0]                   : K16       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 VCCINT                       : L6        : power  :                   : 1.2V    :           :                
-MCU_IN[4]                    : L7        : input  : 2.5 V             :         : 3         : N              
-MCU_IN[2]                    : L8        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
+Buffer4[9]                   : L8        : output : 2.5 V             :         : 3         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
 VCCA4                        : L12       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L14       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 5         :                
+ADC_OUT[9]                   : L13       : output : 2.5 V             :         : 5         : N              
+OUTPUTCHECK[6]               : L14       : output : 2.5 V             :         : 5         : N              
+OUT2MCU[3]                   : L15       : output : 2.5 V             :         : 5         : N              
+OUT2MCU[1]                   : L16       : output : 2.5 V             :         : 5         : N              
 GND+                         : M1        :        :                   :         : 2         :                
 GND+                         : M2        :        :                   :         : 2         :                
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-OUTPUTCHECK[1]               : M6        : output : 2.5 V             :         : 3         : N              
-MCU_IN[6]                    : M7        : input  : 2.5 V             :         : 3         : N              
-ADC_OUT[15]                  : M8        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 3         :                
+Clock_Count[2]               : M8        : output : 2.5 V             :         : 3         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
-OUTPUTCHECK[4]               : M10       : output : 2.5 V             :         : 4         : N              
+Clock_Count[1]               : M10       : output : 2.5 V             :         : 4         : N              
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
 GNDA4                        : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
 VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
 GND+                         : M15       :        :                   :         : 5         :                
 GND+                         : M16       :        :                   :         : 5         :                
-Buffer4[6]                   : N1        : output : 2.5 V             :         : 2         : N              
-Buffer4[11]                  : N2        : output : 2.5 V             :         : 2         : N              
-ADC_OUT[13]                  : N3        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
+BUFFERCHEQ[3]                : N3        : output : 2.5 V             :         : 3         : N              
 VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
-OUTPUTCHECK[5]               : N5        : output : 2.5 V             :         : 3         : N              
-OUTPUTCHECK[6]               : N6        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 3         :                
 GND                          : N7        : gnd    :                   :         :           :                
-MCU_IN[7]                    : N8        : input  : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 3         :                
+Buffer4[8]                   : N9        : output : 2.5 V             :         : 4         : N              
 GND                          : N10       : gnd    :                   :         :           :                
-OUT2MCU[1]                   : N11       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
+Buffer3[0]                   : N11       : output : 2.5 V             :         : 4         : N              
+MCU_IN[2]                    : N12       : input  : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
-Buffer4[0]                   : N14       : output : 2.5 V             :         : 5         : N              
-Buffer4[7]                   : N15       : output : 2.5 V             :         : 5         : N              
-Buffer4[5]                   : N16       : output : 2.5 V             :         : 5         : N              
+BUFFERCHEQ[2]                : N14       : output : 2.5 V             :         : 5         : N              
+ADC_OUT[4]                   : N15       : output : 2.5 V             :         : 5         : N              
+MCU_IN[3]                    : N16       : input  : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : P1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 3         :                
 VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
 GND                          : P5        : gnd    :                   :         :           :                
-MCU_IN[3]                    : P6        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 3         :                
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P8        :        :                   :         : 3         :                
-ADC_OUT[9]                   : P9        : output : 2.5 V             :         : 4         : N              
+Buffer4[7]                   : P8        : output : 2.5 V             :         : 3         : N              
+Buffer1[1]                   : P9        : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-BUFFERCHEQ[3]                : P11       : output : 2.5 V             :         : 4         : N              
+Buffer4[10]                  : P11       : output : 2.5 V             :         : 4         : N              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
-Buffer4[9]                   : P14       : output : 2.5 V             :         : 4         : N              
-OUT2MCU[3]                   : P15       : output : 2.5 V             :         : 5         : N              
-BUFFERCHEQ[1]                : P16       : output : 2.5 V             :         : 5         : N              
-ADC_OUT[14]                  : R1        : output : 2.5 V             :         : 2         : N              
+ADC_OUT[2]                   : P14       : output : 2.5 V             :         : 4         : N              
+Buffer4[1]                   : P15       : output : 2.5 V             :         : 5         : N              
+MCU_IN[7]                    : P16       : input  : 2.5 V             :         : 5         : N              
+OUTPUTCHECK[5]               : R1        : output : 2.5 V             :         : 2         : N              
 GND                          : R2        : gnd    :                   :         :           :                
-OUTPUTCHECK[7]               : R3        : output : 2.5 V             :         : 3         : N              
-OUT2MCU[0]                   : R4        : output : 2.5 V             :         : 3         : N              
-MCU_IN[0]                    : R5        : input  : 2.5 V             :         : 3         : N              
-OUT2MCU[2]                   : R6        : output : 2.5 V             :         : 3         : N              
-MCU_IN[5]                    : R7        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 3         :                
+Clock_Shift[1]               : R4        : output : 2.5 V             :         : 3         : N              
+Clock_Shift[0]               : R5        : output : 2.5 V             :         : 3         : N              
+OUTPUTCHECK[4]               : R6        : output : 2.5 V             :         : 3         : N              
+Buffer1[5]                   : R7        : output : 2.5 V             :         : 3         : N              
 GND+                         : R8        :        :                   :         : 3         :                
 GND+                         : R9        :        :                   :         : 4         :                
-Buffer1[9]                   : R10       : output : 2.5 V             :         : 4         : N              
-Buffer1[8]                   : R11       : output : 2.5 V             :         : 4         : N              
-Buffer1[0]                   : R12       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : R13       :        :                   :         : 4         :                
-BUFFERCHEQ[2]                : R14       : output : 2.5 V             :         : 4         : N              
+Buffer2[8]                   : R10       : output : 2.5 V             :         : 4         : N              
+Buffer2[9]                   : R11       : output : 2.5 V             :         : 4         : N              
+Buffer2[1]                   : R12       : output : 2.5 V             :         : 4         : N              
+BUFFERCHEQ[0]                : R13       : output : 2.5 V             :         : 4         : N              
+MCU_IN[1]                    : R14       : input  : 2.5 V             :         : 4         : N              
 GND                          : R15       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 5         :                
+BUFFERCHEQ[1]                : R16       : output : 2.5 V             :         : 5         : N              
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 3         :                
-Buffer4[2]                   : T3        : output : 2.5 V             :         : 3         : N              
-Buffer4[1]                   : T4        : output : 2.5 V             :         : 3         : N              
-MCU_IN[1]                    : T5        : input  : 2.5 V             :         : 3         : N              
-OUTPUTCHECK[2]               : T6        : output : 2.5 V             :         : 3         : N              
-OUTPUTCHECK[0]               : T7        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 3         :                
+Clock_Shift[3]               : T6        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3         :                
 GND+                         : T8        :        :                   :         : 3         :                
 GND+                         : T9        :        :                   :         : 4         :                
-ADC_OUT[0]                   : T10       : output : 2.5 V             :         : 4         : N              
-ADC_OUT[8]                   : T11       : output : 2.5 V             :         : 4         : N              
-Buffer1[7]                   : T12       : output : 2.5 V             :         : 4         : N              
-Buffer4[8]                   : T13       : output : 2.5 V             :         : 4         : N              
-Buffer4[10]                  : T14       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
+Buffer2[3]                   : T10       : output : 2.5 V             :         : 4         : N              
+Buffer2[5]                   : T11       : output : 2.5 V             :         : 4         : N              
+ADC_IN[9]                    : T12       : input  : 2.5 V             :         : 4         : N              
+Buffer2[11]                  : T13       : output : 2.5 V             :         : 4         : N              
+Buffer4[11]                  : T14       : output : 2.5 V             :         : 4         : N              
+ADC_OUT[0]                   : T15       : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

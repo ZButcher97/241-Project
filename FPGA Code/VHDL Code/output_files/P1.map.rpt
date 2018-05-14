@@ -1,5 +1,5 @@
 Analysis & Synthesis report for P1
-Sun May 13 16:28:57 2018
+Mon May 14 16:27:26 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -13,13 +13,14 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -46,15 +47,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 13 16:28:57 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 14 16:27:26 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; P1                                          ;
 ; Top-level Entity Name              ; P1                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 144                                         ;
-;     Total combinational functions  ; 80                                          ;
-;     Dedicated logic registers      ; 96                                          ;
-; Total registers                    ; 96                                          ;
+; Total logic elements               ; 339                                         ;
+;     Total combinational functions  ; 244                                         ;
+;     Dedicated logic registers      ; 175                                         ;
+; Total registers                    ; 175                                         ;
 ; Total pins                         ; 105                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -174,6 +175,7 @@ agreement for further details.
 ; P1.bdf                           ; yes             ; User Block Diagram/Schematic File  ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/P1.bdf          ;         ;
 ; FIFO_CONFIG.vhd                  ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd ;         ;
 ; buffer3.vhd                      ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd     ;         ;
+; Shifter.vhd                      ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd     ;         ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -182,20 +184,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 144       ;
+; Estimated Total logic elements              ; 339       ;
 ;                                             ;           ;
-; Total combinational functions               ; 80        ;
+; Total combinational functions               ; 244       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 67        ;
-;     -- 3 input functions                    ; 9         ;
-;     -- <=2 input functions                  ; 4         ;
+;     -- 4 input functions                    ; 113       ;
+;     -- 3 input functions                    ; 110       ;
+;     -- <=2 input functions                  ; 21        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 80        ;
+;     -- normal mode                          ; 244       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 96        ;
-;     -- Dedicated logic registers            ; 96        ;
+; Total registers                             ; 175       ;
+;     -- Dedicated logic registers            ; 175       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 105       ;
@@ -203,9 +205,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 96        ;
-; Total fan-out                               ; 668       ;
-; Average fan-out                             ; 1.73      ;
+; Maximum fan-out                             ; 175       ;
+; Total fan-out                               ; 1527      ;
+; Average fan-out                             ; 2.43      ;
 +---------------------------------------------+-----------+
 
 
@@ -214,43 +216,210 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
-; |P1                        ; 80 (0)              ; 96 (0)                    ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |P1                   ; P1          ; work         ;
-;    |Buffer3:inst|          ; 68 (68)             ; 90 (90)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Buffer3:inst      ; Buffer3     ; work         ;
-;    |FIFO_CONFIG:inst1|     ; 12 (12)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|FIFO_CONFIG:inst1 ; FIFO_CONFIG ; work         ;
+; |P1                        ; 244 (0)             ; 175 (0)                   ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |P1                   ; P1          ; work         ;
+;    |Buffer3:inst|          ; 142 (142)           ; 157 (157)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Buffer3:inst      ; Buffer3     ; work         ;
+;    |FIFO_CONFIG:inst1|     ; 30 (30)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|FIFO_CONFIG:inst1 ; FIFO_CONFIG ; work         ;
+;    |Shifter:inst2|         ; 72 (72)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Shifter:inst2     ; Shifter     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+------------------------------------------+----------------------------------------+
-; Register name                            ; Reason for Removal                     ;
-+------------------------------------------+----------------------------------------+
-; Buffer3:inst|ADC_out[12..15]             ; Stuck at VCC due to stuck port data_in ;
-; FIFO_CONFIG:inst1|OUTPUT[6]              ; Stuck at GND due to stuck port data_in ;
-; FIFO_CONFIG:inst1|SPACE_AVAILABLE[0,1,3] ; Stuck at GND due to stuck port data_in ;
-; FIFO_CONFIG:inst1|BUFFER_READ[0,1,3]     ; Stuck at GND due to stuck port data_in ;
-; Buffer3:inst|counter[4..31]              ; Merged with Buffer3:inst|counter[3]    ;
-; Buffer3:inst|counter[3]                  ; Stuck at GND due to stuck port data_in ;
-; Buffer3:inst|clock_counter[3]            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 41   ;                                        ;
-+------------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal         ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Shifter:inst2|bufferout[11]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[10]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[9]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[8]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[7]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[6]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[5]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[4]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[3]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[2]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[1]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[0]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[23]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[22]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[21]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[20]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[19]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[18]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[17]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[16]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[15]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[14]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[13]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[12]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[35]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[34]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[33]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[32]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[31]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[30]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[29]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[28]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[27]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[26]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[25]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[24]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|buffer1[11]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[10]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[9]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[8]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[7]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[6]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[5]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[4]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[3]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[2]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[1]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[0]                            ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[23]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[22]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[21]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[20]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[19]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[18]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[17]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[16]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[15]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[14]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[13]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[12]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[35]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[34]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[33]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[32]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[31]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[30]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[29]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[28]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[27]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[26]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[25]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Shifter:inst2|buffer1[24]                           ; FIFO_CONFIG:inst1|OUTPUT[2] ; yes                    ;
+; Number of user-specified and inferred latches = 72  ;                             ;                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                               ;
-+--------------------------------------+---------------------------+----------------------------------------+
-; Register name                        ; Reason for Removal        ; Registers Removed due to This Register ;
-+--------------------------------------+---------------------------+----------------------------------------+
-; FIFO_CONFIG:inst1|SPACE_AVAILABLE[3] ; Stuck at GND              ; FIFO_CONFIG:inst1|BUFFER_READ[3]       ;
-;                                      ; due to stuck port data_in ;                                        ;
-; FIFO_CONFIG:inst1|SPACE_AVAILABLE[1] ; Stuck at GND              ; FIFO_CONFIG:inst1|BUFFER_READ[1]       ;
-;                                      ; due to stuck port data_in ;                                        ;
-; FIFO_CONFIG:inst1|SPACE_AVAILABLE[0] ; Stuck at GND              ; FIFO_CONFIG:inst1|BUFFER_READ[0]       ;
-;                                      ; due to stuck port data_in ;                                        ;
-; Buffer3:inst|counter[3]              ; Stuck at GND              ; Buffer3:inst|clock_counter[3]          ;
-;                                      ; due to stuck port data_in ;                                        ;
-+--------------------------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------+---------------------------------------------------+
+; Register name                                  ; Reason for Removal                                ;
++------------------------------------------------+---------------------------------------------------+
+; FIFO_CONFIG:inst1|OUTPUT[4,5]                  ; Stuck at GND due to stuck port data_in            ;
+; FIFO_CONFIG:inst1|Current[4..31]               ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|counter[4..31]                    ; Merged with Buffer3:inst|counter[3]               ;
+; Buffer3:inst|BufferCount[3..9,11..31]          ; Merged with Buffer3:inst|BufferCount[10]          ;
+; Buffer3:inst|shifter[1..3]                     ; Merged with Buffer3:inst|shifter[0]               ;
+; FIFO_CONFIG:inst1|SPACE_AVAILABLE[5..9,11..31] ; Merged with FIFO_CONFIG:inst1|SPACE_AVAILABLE[10] ;
+; Buffer3:inst|bufferout[133..143]               ; Merged with Buffer3:inst|bufferout[132]           ;
+; Buffer3:inst|buffer1[133..143]                 ; Merged with Buffer3:inst|buffer1[132]             ;
+; Buffer3:inst|shifter[0]                        ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[132]                      ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|clock_shifter[0..3]               ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[132]                    ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[120..131]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[120..131]               ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[108..119]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[108..119]               ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[96..107]                  ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[96..107]                ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[84..95]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[84..95]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[72..83]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[72..83]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[60..71]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[60..71]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|buffer1[48..59]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|bufferout[48..59]                 ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|BufferCount[10]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|BufferCheck[3]                    ; Stuck at GND due to stuck port data_in            ;
+; FIFO_CONFIG:inst1|Current[3]                   ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|counter[3]                        ; Stuck at GND due to stuck port data_in            ;
+; Buffer3:inst|clock_counter[3]                  ; Stuck at GND due to stuck port data_in            ;
+; FIFO_CONFIG:inst1|SPACE_AVAILABLE[3,4]         ; Merged with FIFO_CONFIG:inst1|SPACE_AVAILABLE[10] ;
+; Total Number of Removed Registers = 319        ;                                                   ;
++------------------------------------------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                     ;
++------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Buffer3:inst|buffer1[132]    ; Stuck at GND              ; Buffer3:inst|bufferout[132], Buffer3:inst|buffer1[120], Buffer3:inst|buffer1[121],   ;
+;                              ; due to stuck port data_in ; Buffer3:inst|buffer1[122], Buffer3:inst|buffer1[123], Buffer3:inst|buffer1[124],     ;
+;                              ;                           ; Buffer3:inst|buffer1[125], Buffer3:inst|buffer1[126], Buffer3:inst|buffer1[127],     ;
+;                              ;                           ; Buffer3:inst|buffer1[128], Buffer3:inst|buffer1[129], Buffer3:inst|buffer1[130],     ;
+;                              ;                           ; Buffer3:inst|buffer1[131], Buffer3:inst|bufferout[120], Buffer3:inst|bufferout[121], ;
+;                              ;                           ; Buffer3:inst|bufferout[122], Buffer3:inst|bufferout[123],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[124], Buffer3:inst|bufferout[125],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[126], Buffer3:inst|bufferout[127],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[128], Buffer3:inst|bufferout[129],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[130], Buffer3:inst|bufferout[131], Buffer3:inst|buffer1[108], ;
+;                              ;                           ; Buffer3:inst|buffer1[109], Buffer3:inst|buffer1[110], Buffer3:inst|buffer1[111],     ;
+;                              ;                           ; Buffer3:inst|buffer1[112], Buffer3:inst|buffer1[113], Buffer3:inst|buffer1[114],     ;
+;                              ;                           ; Buffer3:inst|buffer1[115], Buffer3:inst|buffer1[116], Buffer3:inst|buffer1[117],     ;
+;                              ;                           ; Buffer3:inst|buffer1[118], Buffer3:inst|buffer1[119], Buffer3:inst|bufferout[108],   ;
+;                              ;                           ; Buffer3:inst|bufferout[109], Buffer3:inst|bufferout[110],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[111], Buffer3:inst|bufferout[112],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[113], Buffer3:inst|bufferout[114],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[115], Buffer3:inst|bufferout[116],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[117], Buffer3:inst|bufferout[118],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[119], Buffer3:inst|buffer1[96], Buffer3:inst|buffer1[97],     ;
+;                              ;                           ; Buffer3:inst|buffer1[98], Buffer3:inst|buffer1[99], Buffer3:inst|buffer1[100],       ;
+;                              ;                           ; Buffer3:inst|buffer1[101], Buffer3:inst|buffer1[102], Buffer3:inst|buffer1[103],     ;
+;                              ;                           ; Buffer3:inst|buffer1[104], Buffer3:inst|buffer1[105], Buffer3:inst|buffer1[106],     ;
+;                              ;                           ; Buffer3:inst|buffer1[107], Buffer3:inst|bufferout[96], Buffer3:inst|bufferout[97],   ;
+;                              ;                           ; Buffer3:inst|bufferout[98], Buffer3:inst|bufferout[99], Buffer3:inst|bufferout[100], ;
+;                              ;                           ; Buffer3:inst|bufferout[101], Buffer3:inst|bufferout[102],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[103], Buffer3:inst|bufferout[104],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[105], Buffer3:inst|bufferout[106],                            ;
+;                              ;                           ; Buffer3:inst|bufferout[107], Buffer3:inst|buffer1[84], Buffer3:inst|buffer1[85],     ;
+;                              ;                           ; Buffer3:inst|buffer1[86], Buffer3:inst|buffer1[87], Buffer3:inst|buffer1[88],        ;
+;                              ;                           ; Buffer3:inst|buffer1[89], Buffer3:inst|buffer1[90], Buffer3:inst|buffer1[91],        ;
+;                              ;                           ; Buffer3:inst|buffer1[92], Buffer3:inst|buffer1[93], Buffer3:inst|buffer1[94],        ;
+;                              ;                           ; Buffer3:inst|buffer1[95], Buffer3:inst|bufferout[95], Buffer3:inst|bufferout[94],    ;
+;                              ;                           ; Buffer3:inst|bufferout[93], Buffer3:inst|bufferout[92], Buffer3:inst|bufferout[91],  ;
+;                              ;                           ; Buffer3:inst|bufferout[90], Buffer3:inst|bufferout[89], Buffer3:inst|bufferout[88],  ;
+;                              ;                           ; Buffer3:inst|bufferout[87], Buffer3:inst|bufferout[86], Buffer3:inst|bufferout[85],  ;
+;                              ;                           ; Buffer3:inst|bufferout[84], Buffer3:inst|buffer1[72], Buffer3:inst|buffer1[73],      ;
+;                              ;                           ; Buffer3:inst|buffer1[74], Buffer3:inst|buffer1[75], Buffer3:inst|buffer1[76],        ;
+;                              ;                           ; Buffer3:inst|buffer1[77], Buffer3:inst|buffer1[78], Buffer3:inst|buffer1[79],        ;
+;                              ;                           ; Buffer3:inst|buffer1[80], Buffer3:inst|buffer1[81], Buffer3:inst|buffer1[82],        ;
+;                              ;                           ; Buffer3:inst|buffer1[83], Buffer3:inst|bufferout[83], Buffer3:inst|bufferout[82],    ;
+;                              ;                           ; Buffer3:inst|bufferout[81], Buffer3:inst|bufferout[80], Buffer3:inst|bufferout[79],  ;
+;                              ;                           ; Buffer3:inst|bufferout[78], Buffer3:inst|bufferout[77], Buffer3:inst|bufferout[76],  ;
+;                              ;                           ; Buffer3:inst|bufferout[75], Buffer3:inst|bufferout[74], Buffer3:inst|bufferout[73],  ;
+;                              ;                           ; Buffer3:inst|bufferout[72], Buffer3:inst|buffer1[60], Buffer3:inst|buffer1[61],      ;
+;                              ;                           ; Buffer3:inst|buffer1[62], Buffer3:inst|buffer1[63], Buffer3:inst|buffer1[64],        ;
+;                              ;                           ; Buffer3:inst|buffer1[65], Buffer3:inst|buffer1[66], Buffer3:inst|buffer1[67],        ;
+;                              ;                           ; Buffer3:inst|buffer1[68], Buffer3:inst|buffer1[69], Buffer3:inst|buffer1[70],        ;
+;                              ;                           ; Buffer3:inst|buffer1[71], Buffer3:inst|bufferout[71], Buffer3:inst|bufferout[70],    ;
+;                              ;                           ; Buffer3:inst|bufferout[69], Buffer3:inst|bufferout[68], Buffer3:inst|bufferout[67],  ;
+;                              ;                           ; Buffer3:inst|bufferout[66], Buffer3:inst|bufferout[65], Buffer3:inst|bufferout[64],  ;
+;                              ;                           ; Buffer3:inst|bufferout[63], Buffer3:inst|bufferout[62], Buffer3:inst|bufferout[61],  ;
+;                              ;                           ; Buffer3:inst|bufferout[60], Buffer3:inst|buffer1[48], Buffer3:inst|buffer1[49],      ;
+;                              ;                           ; Buffer3:inst|buffer1[50], Buffer3:inst|buffer1[51], Buffer3:inst|buffer1[52],        ;
+;                              ;                           ; Buffer3:inst|buffer1[53], Buffer3:inst|buffer1[54], Buffer3:inst|buffer1[55],        ;
+;                              ;                           ; Buffer3:inst|buffer1[56], Buffer3:inst|buffer1[57], Buffer3:inst|buffer1[58],        ;
+;                              ;                           ; Buffer3:inst|buffer1[59], Buffer3:inst|bufferout[59], Buffer3:inst|bufferout[58],    ;
+;                              ;                           ; Buffer3:inst|bufferout[57], Buffer3:inst|bufferout[56], Buffer3:inst|bufferout[55],  ;
+;                              ;                           ; Buffer3:inst|bufferout[54], Buffer3:inst|bufferout[53], Buffer3:inst|bufferout[52],  ;
+;                              ;                           ; Buffer3:inst|bufferout[51], Buffer3:inst|bufferout[50], Buffer3:inst|bufferout[49],  ;
+;                              ;                           ; Buffer3:inst|bufferout[48]                                                           ;
+; Buffer3:inst|shifter[0]      ; Stuck at GND              ; Buffer3:inst|clock_shifter[3], Buffer3:inst|clock_shifter[2],                        ;
+;                              ; due to stuck port data_in ; Buffer3:inst|clock_shifter[1], Buffer3:inst|clock_shifter[0]                         ;
+; Buffer3:inst|BufferCount[10] ; Stuck at GND              ; Buffer3:inst|BufferCheck[3], FIFO_CONFIG:inst1|Current[3]                            ;
+;                              ; due to stuck port data_in ;                                                                                      ;
+; Buffer3:inst|counter[3]      ; Stuck at GND              ; Buffer3:inst|clock_counter[3]                                                        ;
+;                              ; due to stuck port data_in ;                                                                                      ;
++------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -258,12 +427,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 96    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 175   ;
+; Number of registers using Synchronous Clear  ; 15    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Clock Enable       ; 157   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -273,9 +442,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[23]    ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[35]    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[0] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|ADC_out[10]    ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[10]    ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |P1|Buffer3:inst|BufferCount[2] ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[17]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[29]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[42]    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[6] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
@@ -285,19 +459,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 105                         ;
-; cycloneiii_ff         ; 96                          ;
-;     ENA               ; 14                          ;
-;     plain             ; 82                          ;
-; cycloneiii_lcell_comb ; 82                          ;
-;     normal            ; 82                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 67                          ;
+; cycloneiii_ff         ; 175                         ;
+;     ENA               ; 145                         ;
+;     ENA SCLR          ; 12                          ;
+;     SCLR              ; 3                           ;
+;     plain             ; 15                          ;
+; cycloneiii_lcell_comb ; 245                         ;
+;     normal            ; 245                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 113                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.91                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 2.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -316,7 +491,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun May 13 16:28:47 2018
+    Info: Processing started: Mon May 14 16:27:11 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P1 -c P1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -326,7 +501,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file adc_in.
     Info (12022): Found design unit 1: ADC_in-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/ADC_in.vhd Line: 20
     Info (12023): Found entity 1: ADC_in File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/ADC_in.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file fifo_config.vhd
-    Info (12022): Found design unit 1: FIFO_CONFIG-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 19
+    Info (12022): Found design unit 1: FIFO_CONFIG-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 20
     Info (12023): Found entity 1: FIFO_CONFIG File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file buffers.vhd
     Info (12022): Found design unit 1: Buffers-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Buffers.vhd Line: 22
@@ -335,57 +510,329 @@ Info (12021): Found 2 design units, including 1 entities, in source file buffer2
     Info (12022): Found design unit 1: Buffer2-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Buffer2.vhd Line: 23
     Info (12023): Found entity 1: Buffer2 File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Buffer2.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file buffer3.vhd
-    Info (12022): Found design unit 1: Buffer3-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 23
+    Info (12022): Found design unit 1: Buffer3-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 27
     Info (12023): Found entity 1: Buffer3 File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file shifter.vhd
+    Info (12022): Found design unit 1: Shifter-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 16
+    Info (12023): Found entity 1: Shifter File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 6
 Info (12127): Elaborating entity "P1" for the top level hierarchy
-Warning (275043): Pin "Buffer4[11..0]" is missing source
-Warning (275043): Pin "BUFFERCHEQ[3..0]" is missing source
+Warning (275011): Block or symbol "FIFO_CONFIG" of instance "inst1" overlaps another block or symbol
 Info (12128): Elaborating entity "Buffer3" for hierarchy "Buffer3:inst"
+Info (12128): Elaborating entity "Shifter" for hierarchy "Shifter:inst2"
+Warning (10492): VHDL Process Statement warning at Shifter.vhd(28): signal "FIFO_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at Shifter.vhd(34): signal "FIFO_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 34
+Warning (10631): VHDL Process Statement warning at Shifter.vhd(25): inferring latch(es) for signal or variable "buffer1", which holds its previous value in one or more paths through the process File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at Shifter.vhd(25): inferring latch(es) for signal or variable "bufferout", which holds its previous value in one or more paths through the process File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[0]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[1]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[2]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[3]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[4]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[5]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[6]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[7]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[8]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[9]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[10]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[11]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[12]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[13]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[14]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[15]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[16]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[17]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[18]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[19]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[20]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[21]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[22]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[23]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[24]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[25]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[26]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[27]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[28]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[29]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[30]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[31]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[32]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[33]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[34]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[35]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[36]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[37]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[38]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[39]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[40]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[41]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[42]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[43]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[44]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[45]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[46]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[47]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[48]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[49]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[50]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[51]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[52]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[53]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[54]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[55]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[56]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[57]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[58]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[59]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[60]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[61]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[62]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[63]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[64]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[65]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[66]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[67]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[68]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[69]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[70]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[71]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[72]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[73]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[74]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[75]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[76]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[77]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[78]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[79]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[80]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[81]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[82]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[83]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[84]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[85]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[86]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[87]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[88]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[89]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[90]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[91]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[92]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[93]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[94]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[95]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[96]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[97]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[98]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[99]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[100]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[101]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[102]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[103]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[104]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[105]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[106]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[107]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[108]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[109]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[110]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[111]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[112]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[113]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[114]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[115]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[116]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[117]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[118]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[119]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[120]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[121]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[122]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[123]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[124]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[125]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[126]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[127]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[128]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[129]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[130]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[131]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[132]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[133]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[134]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[135]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[136]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[137]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[138]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[139]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[140]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[141]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[142]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "bufferout[143]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[0]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[1]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[2]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[3]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[4]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[5]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[6]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[7]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[8]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[9]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[10]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[11]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[12]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[13]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[14]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[15]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[16]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[17]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[18]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[19]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[20]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[21]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[22]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[23]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[24]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[25]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[26]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[27]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[28]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[29]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[30]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[31]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[32]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[33]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[34]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[35]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[36]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[37]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[38]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[39]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[40]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[41]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[42]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[43]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[44]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[45]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[46]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[47]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[48]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[49]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[50]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[51]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[52]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[53]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[54]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[55]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[56]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[57]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[58]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[59]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[60]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[61]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[62]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[63]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[64]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[65]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[66]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[67]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[68]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[69]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[70]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[71]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[72]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[73]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[74]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[75]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[76]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[77]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[78]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[79]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[80]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[81]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[82]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[83]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[84]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[85]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[86]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[87]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[88]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[89]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[90]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[91]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[92]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[93]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[94]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[95]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[96]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[97]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[98]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[99]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[100]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[101]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[102]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[103]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[104]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[105]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[106]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[107]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[108]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[109]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[110]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[111]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[112]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[113]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[114]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[115]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[116]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[117]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[118]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[119]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[120]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[121]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[122]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[123]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[124]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[125]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[126]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[127]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[128]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[129]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[130]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[131]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[132]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[133]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[134]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[135]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[136]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[137]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[138]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[139]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[140]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[141]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[142]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
+Info (10041): Inferred latch for "buffer1[143]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
 Info (12128): Elaborating entity "FIFO_CONFIG" for hierarchy "FIFO_CONFIG:inst1"
-Warning (10540): VHDL Signal Declaration warning at FIFO_CONFIG.vhd(22): used explicit default value for signal "MAX" because signal was never assigned a value File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 22
-Warning (10034): Output port "OUTPUT[7]" at FIFO_CONFIG.vhd(13) has no driver File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 13
-Warning (10034): Output port "OUTPUT[5..3]" at FIFO_CONFIG.vhd(13) has no driver File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 13
+Warning (10540): VHDL Signal Declaration warning at FIFO_CONFIG.vhd(24): used explicit default value for signal "MAX" because signal was never assigned a value File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ADC_OUT[15]" is stuck at VCC
-    Warning (13410): Pin "ADC_OUT[14]" is stuck at VCC
-    Warning (13410): Pin "ADC_OUT[13]" is stuck at VCC
-    Warning (13410): Pin "ADC_OUT[12]" is stuck at VCC
-    Warning (13410): Pin "Buffer4[11]" is stuck at GND
-    Warning (13410): Pin "Buffer4[10]" is stuck at GND
-    Warning (13410): Pin "Buffer4[9]" is stuck at GND
-    Warning (13410): Pin "Buffer4[8]" is stuck at GND
-    Warning (13410): Pin "Buffer4[7]" is stuck at GND
-    Warning (13410): Pin "Buffer4[6]" is stuck at GND
-    Warning (13410): Pin "Buffer4[5]" is stuck at GND
-    Warning (13410): Pin "Buffer4[4]" is stuck at GND
-    Warning (13410): Pin "Buffer4[3]" is stuck at GND
-    Warning (13410): Pin "Buffer4[2]" is stuck at GND
-    Warning (13410): Pin "Buffer4[1]" is stuck at GND
-    Warning (13410): Pin "Buffer4[0]" is stuck at GND
     Warning (13410): Pin "BUFFERCHEQ[3]" is stuck at GND
-    Warning (13410): Pin "BUFFERCHEQ[2]" is stuck at GND
-    Warning (13410): Pin "BUFFERCHEQ[1]" is stuck at GND
-    Warning (13410): Pin "BUFFERCHEQ[0]" is stuck at GND
     Warning (13410): Pin "Clock_Count[3]" is stuck at GND
-    Warning (13410): Pin "OUT2MCU[3]" is stuck at GND
-    Warning (13410): Pin "OUT2MCU[1]" is stuck at GND
-    Warning (13410): Pin "OUT2MCU[0]" is stuck at GND
-    Warning (13410): Pin "OUTPUTCHECK[7]" is stuck at GND
-    Warning (13410): Pin "OUTPUTCHECK[6]" is stuck at GND
+    Warning (13410): Pin "Clock_Shift[3]" is stuck at GND
+    Warning (13410): Pin "Clock_Shift[2]" is stuck at GND
+    Warning (13410): Pin "Clock_Shift[1]" is stuck at GND
+    Warning (13410): Pin "Clock_Shift[0]" is stuck at GND
     Warning (13410): Pin "OUTPUTCHECK[5]" is stuck at GND
     Warning (13410): Pin "OUTPUTCHECK[4]" is stuck at GND
-    Warning (13410): Pin "OUTPUTCHECK[3]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 250 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 448 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 84 output pins
-    Info (21061): Implemented 145 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 713 megabytes
-    Info: Processing ended: Sun May 13 16:28:57 2018
-    Info: Elapsed time: 00:00:10
+    Info (21061): Implemented 343 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 708 megabytes
+    Info: Processing ended: Mon May 14 16:27:26 2018
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:22
 
 
