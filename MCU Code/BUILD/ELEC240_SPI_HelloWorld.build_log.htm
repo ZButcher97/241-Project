@@ -3,65 +3,63 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.21.1.0
-Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: George White Hewlett-Packard Flex license: MDK-ARM Professional: 95 user(s) (mdk_pro) Borrow: 
+IDE-Version: µVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zack butcher, student, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional: 95 user(s)  Version: 5.21a
+Toolchain:       MDK-Lite  Version: 5.24.1
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 3 (build 300)
-Assembler:       Armasm.exe V5.06 update 3 (build 300)
-Linker/Locator:  ArmLink.exe V5.06 update 3 (build 300)
-Library Manager: ArmAr.exe V5.06 update 3 (build 300)
-Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
-CPU DLL:         SARMCM3.DLL V5.21a
-Dialog DLL:      DCM.DLL V1.13.8.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
-Dialog DLL:      TCM.DLL V1.14.14.0
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
-C:\Users\georg\Desktop\Github\P1\MCU Code\ELEC240_SPI_HelloWorld.uvprojx
-Project File Date:  03/27/2018
+C:\Users\ZackB\OneDrive - University of Plymouth\GIT_ROOT\241 Project\MCU Code\ELEC240_SPI_HelloWorld.uvprojx
+Project File Date:  05/10/2018
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ELEC240_SPI_HelloWorld'
 compiling main.cpp...
-main.cpp(38): error:  #40: expected an identifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(38): error:  #79: expected a type specifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(38): error:  #79: expected a type specifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(39): error:  #40: expected an identifier
-  		SPI.frequency(1000000);     								// 1MHz clock rate
-main.cpp(39): error:  #79: expected a type specifier
-  		SPI.frequency(1000000);     								// 1MHz clock rate
-main.cpp(43): warning:  #177-D: variable "SPI_recieved_data" was declared but never referenced
+main.cpp(43): warning:  #177-D: variable "SPI_recieved_data"  was declared but never referenced
   		int SPI_recieved_data = 0;
-main.cpp(86): warning:  #177-D: variable "Overflow" was declared but never referenced
+main.cpp(90): warning:  #177-D: variable "Overflow"  was declared but never referenced
   	int Overflow = SPI_MASK_Overflow;
-main.cpp(87): warning:  #177-D: variable "Avaliable" was declared but never referenced
+main.cpp(91): warning:  #177-D: variable "Avaliable"  was declared but never referenced
   	int Avaliable = SPI_MASK_Avaliable;
-main.cpp(88): warning:  #177-D: variable "FifoLen" was declared but never referenced
+main.cpp(92): warning:  #177-D: variable "FifoLen"  was declared but never referenced
   	long long FifoLen = SPI_MASK_FIFOLength;
-main.cpp(115): warning:  #940-D: missing return statement at end of non-void function "Calc_HeartRate"
+main.cpp(119): warning:  #940-D: missing return statement at end of non-void function "Calc_HeartRate" 
   }
-main.cpp(120): warning:  #940-D: missing return statement at end of non-void function "NormData"
+main.cpp(124): warning:  #940-D: missing return statement at end of non-void function "NormData" 
   }
-main.cpp(125): warning:  #940-D: missing return statement at end of non-void function "LCD_SendChar"
+main.cpp(129): warning:  #940-D: missing return statement at end of non-void function "LCD_SendChar" 
   }
-main.cpp: 7 warnings, 5 errors
-".\BUILD\ELEC240_SPI_HelloWorld.axf" - 5 Error(s), 7 Warning(s).
+main.cpp: 7 warnings, 0 errors
+linking...
+Program Size: Code=26736 RO-data=2668 RW-data=96 ZI-data=1956  
+".\BUILD\ELEC240_SPI_HelloWorld.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.11.0.pack
+                Keil.STM32F4xx_DFP.2.11.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\georg\Desktop\Github\P1\MCU Code\RTE
+  .\RTE\_ELEC240_SPI_HelloWorld
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
