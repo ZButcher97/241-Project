@@ -1,0 +1,30 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_signed.all;
+
+entity FIFO_CONFIG is
+
+	port(
+	
+	MCU_IN : in std_logic_vector(7 downto 0);
+	OUTPUT : out std_logic_vector(7 downto 0);
+	
+	);
+
+end entity;
+
+architecture Calculations of FIFO_CONFIG is
+
+begin
+
+	process (clk,MCU_IN,OUTPUT)
+		begin
+			if (MCU_IN(1) = '1') then
+				
+				OUTPUT <= "10000000";
+				
+			end if; --rising_edge(clk)
+		
+	end process;
+end Calculations;

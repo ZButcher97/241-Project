@@ -1,0 +1,33 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_signed.all;
+
+entity Shifter is
+
+	port(
+		clk 					: in  std_logic; 							 --Clock
+		bufferin				: in  std_logic_vector(143 downto 0);
+		bufferout			: out std_logic_vector(143 downto 0);
+
+	);
+
+end entity;
+
+architecture Calculations of Shifter is
+
+signal BufferCount 	  : integer := 0;
+signal buffer1   		  : std_logic_vector(143 downto 0);
+signal counter			  : integer := 0;
+signal shifter			  : integer := 0;
+
+begin
+
+	process (bufferin,Buffer1)
+		begin	
+		
+				buffer1(131 down to 0) <= bufferin(143 downto 12);
+				bufferout <= "000000000000" & buffer1;
+				
+	end process;
+end Calculations;

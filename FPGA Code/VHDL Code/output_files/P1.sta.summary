@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -4.356
+TNS   : -629.635
+
+Type  : Slow 1200mV 85C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : -0.665
+TNS   : -26.603
+
+Type  : Slow 1200mV 85C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : -0.831
+TNS   : -2.483
+
+Type  : Slow 1200mV 85C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : -0.360
+TNS   : -16.646
+
+Type  : Slow 1200mV 85C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.227
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -243.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -3.817
+TNS   : -549.409
+
+Type  : Slow 1200mV 0C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : -0.462
+TNS   : -17.039
+
+Type  : Slow 1200mV 0C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : -0.739
+TNS   : -2.209
+
+Type  : Slow 1200mV 0C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : -0.225
+TNS   : -9.389
+
+Type  : Slow 1200mV 0C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -243.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -2.169
+TNS   : -265.238
+
+Type  : Fast 1200mV 0C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.053
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : -0.528
+TNS   : -1.570
+
+Type  : Fast 1200mV 0C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : -0.167
+TNS   : -7.274
+
+Type  : Fast 1200mV 0C Model Hold 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -257.323
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[3]'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FIFO_CONFIG:inst1|OUTPUT[2]'
+Slack : 0.351
+TNS   : 0.000
+
+------------------------------------------------------------
