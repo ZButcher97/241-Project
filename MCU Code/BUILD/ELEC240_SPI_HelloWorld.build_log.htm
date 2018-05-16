@@ -22,31 +22,12 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 C:\Users\ZackB\OneDrive - University of Plymouth\GIT_ROOT\241 Project\MCU Code\ELEC240_SPI_HelloWorld.uvprojx
-Project File Date:  02/20/2018
+Project File Date:  05/10/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ELEC240_SPI_HelloWorld'
 compiling main.cpp...
-main.cpp(38): error:  #40: expected an identifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(38): error:  #79: expected a type specifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(38): error:  #79: expected a type specifier
-  		SPI.format(8,0);            								// Setup the DATA frame SPI for 16 bit wide word, Clock Polarity 0 and Clock Phase 0 (0)
-main.cpp(39): error:  #40: expected an identifier
-  		SPI.frequency(1000000);     								// 1MHz clock rate
-main.cpp(39): error:  #79: expected a type specifier
-  		SPI.frequency(1000000);     								// 1MHz clock rate
-main.cpp(50): error:  #18: expected a ")"
-  		SPI_SendRead(
-PI_Reset, SPI_SS_ConfigRed);
-main.cpp(50): error:  #165: too few arguments in function call
-  		SPI_SendRead(
-PI_Reset, SPI_SS_ConfigRed);
-main.cpp(50): error:  #29: expected an expression
-  		SPI_SendRead(
-PI_Reset, SPI_SS_ConfigRed);
 main.cpp(43): warning:  #177-D: variable "SPI_recieved_data"  was declared but never referenced
   		int SPI_recieved_data = 0;
 main.cpp(90): warning:  #177-D: variable "Overflow"  was declared but never referenced
@@ -59,12 +40,12 @@ main.cpp(119): warning:  #940-D: missing return statement at end of non-void fun
   }
 main.cpp(124): warning:  #940-D: missing return statement at end of non-void function "NormData" 
   }
-main.cpp(129): warning:  #1-D: last line of file ends without a newline
-  }
 main.cpp(129): warning:  #940-D: missing return statement at end of non-void function "LCD_SendChar" 
   }
-main.cpp: 8 warnings, 8 errors
-".\BUILD\ELEC240_SPI_HelloWorld.axf" - 8 Error(s), 8 Warning(s).
+main.cpp: 7 warnings, 0 errors
+linking...
+Program Size: Code=26736 RO-data=2668 RW-data=96 ZI-data=1956  
+".\BUILD\ELEC240_SPI_HelloWorld.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -78,8 +59,7 @@ Package Vendor: Keil
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
