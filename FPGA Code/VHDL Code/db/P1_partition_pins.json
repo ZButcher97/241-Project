@@ -4,99 +4,99 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ADC_OUT[11]",
+					"name" : "FIFO_OUT[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[10]",
+					"name" : "FIFO_OUT[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[9]",
+					"name" : "FIFO_OUT[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[8]",
+					"name" : "FIFO_OUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[7]",
+					"name" : "FIFO_OUT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[6]",
+					"name" : "FIFO_OUT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[5]",
+					"name" : "OUTPUTa[11]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[4]",
+					"name" : "OUTPUTa[10]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[3]",
+					"name" : "OUTPUTa[9]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[2]",
+					"name" : "OUTPUTa[8]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[1]",
+					"name" : "OUTPUTa[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_OUT[0]",
+					"name" : "OUTPUTa[6]",
 					"strict" : false
 				},
 				{
-					"name" : "MASK[3]",
+					"name" : "OUTPUTa[5]",
 					"strict" : false
 				},
 				{
-					"name" : "MASK[2]",
+					"name" : "OUTPUTa[4]",
 					"strict" : false
 				},
 				{
-					"name" : "OUT2MCU[3]",
+					"name" : "OUTPUTa[3]",
 					"strict" : false
 				},
 				{
-					"name" : "OUT2MCU[2]",
+					"name" : "OUTPUTa[2]",
 					"strict" : false
 				},
 				{
-					"name" : "OUT2MCU[1]",
+					"name" : "OUTPUTa[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OUT2MCU[0]",
+					"name" : "OUTPUTa[0]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[7]",
+					"name" : "OUTPUTb[7]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[6]",
+					"name" : "OUTPUTb[6]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[3]",
+					"name" : "OUTPUTb[3]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[2]",
+					"name" : "OUTPUTb[2]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[1]",
+					"name" : "OUTPUTb[1]",
 					"strict" : false
 				},
 				{
-					"name" : "OUTPUTCHECK[0]",
+					"name" : "OUTPUTb[0]",
 					"strict" : false
 				},
 				{
