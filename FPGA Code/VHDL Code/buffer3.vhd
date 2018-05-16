@@ -13,16 +13,17 @@ entity Buffer3 is
 		ADC_out 				: buffer std_logic_vector(11 downto 0); --Data output
 		BufferCheck			: out std_logic_vector(3 downto 0);   --Check how many buffers are in use
 		bufferout			: out std_logic_vector(143 downto 0);
-		buffer10				: out std_logic_vector(11 downto 0);
-		buffer20				: out std_logic_vector(11 downto 0);
-		buffer30				: out std_logic_vector(11 downto 0);
-		buffer40				: out std_logic_vector(11 downto 0);
-		buffer50				: out std_logic_vector(11 downto 0);
-		buffer60				: out std_logic_vector(11 downto 0);
-		buffer70				: out std_logic_vector(11 downto 0);
-		buffer80				: out std_logic_vector(11 downto 0);
-		buffer90				: out std_logic_vector(11 downto 0);
-		clock_counter 		: out std_logic_vector(4 downto 0);
+		--buffer10				: out std_logic_vector(11 downto 0);
+		--buffer20				: out std_logic_vector(11 downto 0);
+		--buffer30				: out std_logic_vector(11 downto 0);
+		--buffer40				: out std_logic_vector(11 downto 0);
+		--buffer50				: out std_logic_vector(11 downto 0);
+		--buffer60				: out std_logic_vector(11 downto 0);
+		--buffer70				: out std_logic_vector(11 downto 0);
+		--buffer80				: out std_logic_vector(11 downto 0);
+		--buffer90				: out std_logic_vector(11 downto 0);
+		--clock_counter 		: out std_logic_vector(4 downto 0);
+		MASK					: out std_logic_vector(3 downto 0);
 		AVAILABLE			: out std_logic
 	);
 
@@ -44,7 +45,8 @@ begin
 			
 				if(FIFO_IN(0) = '1') then --reset = 1
 				
-					ADC_out <= "000000000000"; --"0011" &
+					ADC_out <= "000000000000";
+					MASK    <= "0011";
 					buffer1 <= "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 					counter <= 0;
 					shifter <= 0;
@@ -348,7 +350,8 @@ begin
 						
 						if (FIFO_IN(2) = '1') then --load = 1
 						
-							ADC_out <= buffer1(11 downto 0); --"1111" & 
+							ADC_out   <= buffer1(11 downto 0); --"1111" & 
+							MASK      <= "1111";
 							bufferout <= buffer1;
 						
 						end if; --load = 1
@@ -386,18 +389,18 @@ begin
 						
 						end if;						
 						
-						clock_counter <= conv_std_logic_vector(counter,5);
+						--clock_counter <= conv_std_logic_vector(counter,5);
 						BufferCheck <= conv_std_logic_vector(BufferCount,4);
 						
-						buffer10  <= buffer1(11 downto 0);
-						buffer20  <= buffer1(23 downto 12);
-						buffer30  <= buffer1(35 downto 24);
-						buffer40  <= buffer1(47 downto 36);
-						buffer50  <= buffer1(59 downto 48);
-						buffer60  <= buffer1(71 downto 60);
-						buffer70  <= buffer1(83 downto 72);
-						buffer80  <= buffer1(95 downto 84);
-						buffer90  <= buffer1(107 downto 96);
+--						buffer10  <= buffer1(11 downto 0);
+--						buffer20  <= buffer1(23 downto 12);
+--						buffer30  <= buffer1(35 downto 24);
+--						buffer40  <= buffer1(47 downto 36);
+--						buffer50  <= buffer1(59 downto 48);
+--						buffer60  <= buffer1(71 downto 60);
+--						buffer70  <= buffer1(83 downto 72);
+--						buffer80  <= buffer1(95 downto 84);
+--						buffer90  <= buffer1(107 downto 96);
 
 						
 					end if; --if sampling=1
