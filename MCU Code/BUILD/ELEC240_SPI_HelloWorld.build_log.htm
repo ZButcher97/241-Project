@@ -28,24 +28,24 @@ Project File Date:  05/10/2018
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ELEC240_SPI_HelloWorld'
 compiling main.cpp...
-main.cpp(43): warning:  #177-D: variable "SPI_recieved_data"  was declared but never referenced
-  		int SPI_recieved_data = 0;
-main.cpp(90): warning:  #177-D: variable "Overflow"  was declared but never referenced
-  	int Overflow = SPI_MASK_Overflow;
-main.cpp(91): warning:  #177-D: variable "Avaliable"  was declared but never referenced
-  	int Avaliable = SPI_MASK_Avaliable;
-main.cpp(92): warning:  #177-D: variable "FifoLen"  was declared but never referenced
-  	long long FifoLen = SPI_MASK_FIFOLength;
-main.cpp(119): warning:  #940-D: missing return statement at end of non-void function "Calc_HeartRate" 
+main.cpp(52): error:  #304: no instance of overloaded function "mbed::InterruptIn::rise"  matches the argument list
+            argument types are: (int (*)())
+            object type is: mbed::InterruptIn
+  	OVERFLOW.rise(&OVERFLOW_Detect);
+main.cpp(50): warning:  #177-D: variable "SPI_recieved_data"  was declared but never referenced
+  	int SPI_recieved_data = 0;
+main.cpp(133): warning:  #940-D: missing return statement at end of non-void function "Calc_HeartRate" 
   }
-main.cpp(124): warning:  #940-D: missing return statement at end of non-void function "NormData" 
+main.cpp(128): warning:  #177-D: variable "RangeFind"  was declared but never referenced
+  	int *RangeFind;
+main.cpp(141): warning:  #940-D: missing return statement at end of non-void function "LCD_SendString" 
   }
-main.cpp(129): warning:  #940-D: missing return statement at end of non-void function "LCD_SendChar" 
+main.cpp(145): warning:  #940-D: missing return statement at end of non-void function "LCD_SendChar" 
   }
-main.cpp: 7 warnings, 0 errors
-linking...
-Program Size: Code=26736 RO-data=2668 RW-data=96 ZI-data=1956  
-".\BUILD\ELEC240_SPI_HelloWorld.axf" - 0 Error(s), 7 Warning(s).
+main.cpp(161): warning:  #940-D: missing return statement at end of non-void function "FIFO_Add" 
+  }
+main.cpp: 6 warnings, 1 error
+".\BUILD\ELEC240_SPI_HelloWorld.axf" - 1 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,7 +59,8 @@ Package Vendor: Keil
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Target not created.
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>
