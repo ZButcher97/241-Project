@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/14/2018 20:20:43"
+-- Generated on "05/16/2018 16:21:24"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          P1
 -- 
@@ -36,17 +36,8 @@ ARCHITECTURE P1_arch OF P1_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL ADC_IN : STD_LOGIC_VECTOR(11 DOWNTO 0);
 SIGNAL ADC_OUT : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer1 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer2 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer3 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer4 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer5 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer6 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer7 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer8 : STD_LOGIC_VECTOR(11 DOWNTO 0);
-SIGNAL Buffer9 : STD_LOGIC_VECTOR(11 DOWNTO 0);
 SIGNAL CLK : STD_LOGIC;
-SIGNAL Clock_Count : STD_LOGIC_VECTOR(4 DOWNTO 0);
+SIGNAL MASK : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL MCU_IN : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL OUT2MCU : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL OUTPUTCHECK : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -54,17 +45,8 @@ COMPONENT P1
 	PORT (
 	ADC_IN : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
 	ADC_OUT : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer1 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer2 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer3 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer4 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer5 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer6 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer7 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer8 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
-	Buffer9 : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
 	CLK : IN STD_LOGIC;
-	Clock_Count : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+	MASK : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	MCU_IN : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	OUT2MCU : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
 	OUTPUTCHECK : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -76,17 +58,8 @@ BEGIN
 -- list connections between master ports and signals
 	ADC_IN => ADC_IN,
 	ADC_OUT => ADC_OUT,
-	Buffer1 => Buffer1,
-	Buffer2 => Buffer2,
-	Buffer3 => Buffer3,
-	Buffer4 => Buffer4,
-	Buffer5 => Buffer5,
-	Buffer6 => Buffer6,
-	Buffer7 => Buffer7,
-	Buffer8 => Buffer8,
-	Buffer9 => Buffer9,
 	CLK => CLK,
-	Clock_Count => Clock_Count,
+	MASK => MASK,
 	MCU_IN => MCU_IN,
 	OUT2MCU => OUT2MCU,
 	OUTPUTCHECK => OUTPUTCHECK

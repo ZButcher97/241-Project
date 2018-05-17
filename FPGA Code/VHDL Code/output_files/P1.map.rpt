@@ -1,5 +1,5 @@
 Analysis & Synthesis report for P1
-Mon May 14 20:00:31 2018
+Wed May 16 16:46:16 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -15,11 +15,12 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +47,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 14 20:00:31 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 16 16:46:16 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; P1                                          ;
 ; Top-level Entity Name              ; P1                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 997                                         ;
-;     Total combinational functions  ; 742                                         ;
-;     Dedicated logic registers      ; 436                                         ;
-; Total registers                    ; 436                                         ;
-; Total pins                         ; 158                                         ;
+; Total logic elements               ; 906                                         ;
+;     Total combinational functions  ; 746                                         ;
+;     Dedicated logic registers      ; 342                                         ;
+; Total registers                    ; 342                                         ;
+; Total pins                         ; 49                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -162,9 +163,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -177,6 +176,7 @@ agreement for further details.
 ; FIFO_CONFIG.vhd                  ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd ;         ;
 ; buffer3.vhd                      ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd     ;         ;
 ; Shifter.vhd                      ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd     ;         ;
+; Finale.vhd                       ; yes             ; User VHDL File                     ; C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Finale.vhd      ;         ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -185,30 +185,30 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 997       ;
+; Estimated Total logic elements              ; 906       ;
 ;                                             ;           ;
-; Total combinational functions               ; 742       ;
+; Total combinational functions               ; 746       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 371       ;
-;     -- 3 input functions                    ; 348       ;
-;     -- <=2 input functions                  ; 23        ;
+;     -- 4 input functions                    ; 349       ;
+;     -- 3 input functions                    ; 359       ;
+;     -- <=2 input functions                  ; 38        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 742       ;
+;     -- normal mode                          ; 746       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
-; Total registers                             ; 436       ;
-;     -- Dedicated logic registers            ; 436       ;
+; Total registers                             ; 342       ;
+;     -- Dedicated logic registers            ; 342       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 158       ;
+; I/O pins                                    ; 49        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 436       ;
-; Total fan-out                               ; 4175      ;
-; Average fan-out                             ; 2.79      ;
+; Maximum fan-out                             ; 342       ;
+; Total fan-out                               ; 3630      ;
+; Average fan-out                             ; 3.06      ;
 +---------------------------------------------+-----------+
 
 
@@ -217,9 +217,10 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name   ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
-; |P1                        ; 742 (0)             ; 436 (0)                   ; 0           ; 0            ; 0       ; 0         ; 158  ; 0            ; |P1                   ; P1          ; work         ;
-;    |Buffer3:inst|          ; 446 (446)           ; 415 (415)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Buffer3:inst      ; Buffer3     ; work         ;
+; |P1                        ; 746 (0)             ; 342 (0)                   ; 0           ; 0            ; 0       ; 0         ; 49   ; 0            ; |P1                   ; P1          ; work         ;
+;    |Buffer3:inst|          ; 450 (450)           ; 303 (303)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Buffer3:inst      ; Buffer3     ; work         ;
 ;    |FIFO_CONFIG:inst1|     ; 32 (32)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|FIFO_CONFIG:inst1 ; FIFO_CONFIG ; work         ;
+;    |Finale:inst3|          ; 0 (0)               ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Finale:inst3      ; Finale      ; work         ;
 ;    |Shifter:inst2|         ; 264 (264)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |P1|Shifter:inst2     ; Shifter     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -242,94 +243,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Shifter:inst2|bufferout[2]                           ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
 ; Shifter:inst2|bufferout[1]                           ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
 ; Shifter:inst2|bufferout[0]                           ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[23]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[22]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[21]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[20]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[19]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[18]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[17]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[16]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[15]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[14]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[13]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[12]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[35]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[34]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[33]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[32]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[31]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[30]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[29]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[28]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[27]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[26]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[25]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[24]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[47]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[46]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[45]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[44]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[43]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[42]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[41]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[40]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[39]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[38]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[37]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[36]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[59]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[58]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[57]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[56]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[55]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[54]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[53]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[52]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[51]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[50]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[49]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[48]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[71]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[70]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[69]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[68]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[67]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[66]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[65]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[64]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[63]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[62]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[61]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[60]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[83]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[82]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[81]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[80]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[79]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[78]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[77]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[76]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[75]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[74]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[73]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[72]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[95]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[94]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[93]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[92]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[91]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[90]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[89]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[88]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[87]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[86]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[85]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[84]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[107]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[106]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
-; Shifter:inst2|bufferout[105]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[120]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[121]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[122]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[123]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[124]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[125]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[126]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[127]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[128]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[129]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[130]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[131]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[108]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[109]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[110]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[111]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[112]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[113]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[114]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[115]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[116]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[117]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[118]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[119]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[96]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[97]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[98]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[99]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[100]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[101]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[102]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[103]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
 ; Shifter:inst2|bufferout[104]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[105]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[106]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[107]                         ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[12]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[13]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[14]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[15]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[16]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[17]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[18]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[19]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[20]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[21]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[22]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[23]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[36]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[37]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[38]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[39]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[40]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[41]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[42]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[43]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[44]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[45]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[46]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[47]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[60]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[61]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[62]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[63]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[64]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[65]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[66]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[67]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[68]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[69]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[70]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[71]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[84]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[85]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[86]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[87]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[88]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[89]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[90]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[91]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[92]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[93]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[94]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[95]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[24]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[25]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[26]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
+; Shifter:inst2|bufferout[27]                          ; FIFO_CONFIG:inst1|OUTPUT[3] ; yes                    ;
 ; Number of user-specified and inferred latches = 264  ;                             ;                        ;
 +------------------------------------------------------+-----------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -342,12 +343,26 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +------------------------------------------------+---------------------------------------------------+
 ; FIFO_CONFIG:inst1|Current[4..31]               ; Stuck at GND due to stuck port data_in            ;
 ; FIFO_CONFIG:inst1|SPACE_AVAILABLE[5..9,11..31] ; Merged with FIFO_CONFIG:inst1|SPACE_AVAILABLE[10] ;
-; Buffer3:inst|counter[5..9,11..31]              ; Merged with Buffer3:inst|counter[10]              ;
+; Buffer3:inst|MASK[3]                           ; Merged with Buffer3:inst|MASK[2]                  ;
+; Buffer3:inst|MASK[1]                           ; Merged with Buffer3:inst|MASK[0]                  ;
 ; Buffer3:inst|BufferCount[4..9,11..31]          ; Merged with Buffer3:inst|BufferCount[10]          ;
+; Buffer3:inst|counter[5..9,11..31]              ; Merged with Buffer3:inst|counter[10]              ;
+; Buffer3:inst|MASK[0]                           ; Stuck at VCC due to stuck port data_in            ;
+; Finale:inst3|Final_Output2[4,5]                ; Stuck at VCC due to stuck port data_in            ;
 ; Buffer3:inst|BufferCount[10]                   ; Stuck at GND due to stuck port data_in            ;
 ; Buffer3:inst|counter[10]                       ; Stuck at GND due to stuck port data_in            ;
-; Total Number of Removed Registers = 109        ;                                                   ;
+; Total Number of Removed Registers = 114        ;                                                   ;
 +------------------------------------------------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                     ;
++----------------------+---------------------------+--------------------------------------------------------------+
+; Register name        ; Reason for Removal        ; Registers Removed due to This Register                       ;
++----------------------+---------------------------+--------------------------------------------------------------+
+; Buffer3:inst|MASK[0] ; Stuck at VCC              ; Finale:inst3|Final_Output2[5], Finale:inst3|Final_Output2[4] ;
+;                      ; due to stuck port data_in ;                                                              ;
++----------------------+---------------------------+--------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -355,12 +370,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 436   ;
+; Total registers                              ; 342   ;
 ; Number of registers using Synchronous Clear  ; 17    ;
-; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 413   ;
+; Number of registers using Clock Enable       ; 300   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -370,22 +385,23 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|ADC_out[10]     ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[1]      ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[3]  ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[23]     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |P1|Buffer3:inst|MASK[0]         ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|ADC_out[4]      ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[2]      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |P1|FIFO_CONFIG:inst1|OUTPUT[2]  ;
 ; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[24]     ;
 ; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[36]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[59]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[60]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[72]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[84]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[107]    ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[117]    ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[120]    ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[135]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[48]     ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[62]     ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[83]     ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[89]     ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[96]     ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[113]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[130]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[143]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |P1|Buffer3:inst|buffer1[12]     ;
 ; 14:1               ; 5 bits    ; 45 LEs        ; 40 LEs               ; 5 LEs                  ; Yes        ; |P1|Buffer3:inst|BufferCount[10] ;
-; 38:1               ; 2 bits    ; 50 LEs        ; 34 LEs               ; 16 LEs                 ; Yes        ; |P1|Buffer3:inst|counter[10]     ;
+; 38:1               ; 2 bits    ; 50 LEs        ; 34 LEs               ; 16 LEs                 ; Yes        ; |P1|Buffer3:inst|counter[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -394,21 +410,22 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 158                         ;
-; cycloneiii_ff         ; 436                         ;
-;     ENA               ; 399                         ;
-;     ENA SCLR          ; 14                          ;
-;     SCLR SLD          ; 3                           ;
-;     plain             ; 20                          ;
-; cycloneiii_lcell_comb ; 743                         ;
-;     normal            ; 743                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 348                         ;
-;         4 data inputs ; 371                         ;
+; boundary_port         ; 49                          ;
+; cycloneiii_ff         ; 342                         ;
+;     ENA               ; 287                         ;
+;     ENA SCLR          ; 13                          ;
+;     SCLR SLD          ; 4                           ;
+;     plain             ; 38                          ;
+; cycloneiii_lcell_comb ; 748                         ;
+;     normal            ; 748                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 359                         ;
+;         4 data inputs ; 349                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 3.80                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 3.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -427,7 +444,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon May 14 20:00:19 2018
+    Info: Processing started: Wed May 16 16:46:04 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P1 -c P1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -446,14 +463,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file buffer2
     Info (12022): Found design unit 1: Buffer2-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Buffer2.vhd Line: 23
     Info (12023): Found entity 1: Buffer2 File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Buffer2.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file buffer3.vhd
-    Info (12022): Found design unit 1: Buffer3-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 31
+    Info (12022): Found design unit 1: Buffer3-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 32
     Info (12023): Found entity 1: Buffer3 File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file shifter.vhd
     Info (12022): Found design unit 1: Shifter-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 16
     Info (12023): Found entity 1: Shifter File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file finale.vhd
+    Info (12022): Found design unit 1: Finale-Calculations File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Finale.vhd Line: 19
+    Info (12023): Found entity 1: Finale File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Finale.vhd Line: 6
 Info (12127): Elaborating entity "P1" for the top level hierarchy
+Info (12128): Elaborating entity "FIFO_CONFIG" for hierarchy "FIFO_CONFIG:inst1"
+Warning (10540): VHDL Signal Declaration warning at FIFO_CONFIG.vhd(24): used explicit default value for signal "MAX" because signal was never assigned a value File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 24
+Warning (10034): Output port "OUTPUT[5..4]" at FIFO_CONFIG.vhd(14) has no driver File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 14
 Info (12128): Elaborating entity "Buffer3" for hierarchy "Buffer3:inst"
-Warning (10036): Verilog HDL or VHDL warning at buffer3.vhd(36): object "shifter" assigned a value but never read File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 36
+Warning (10036): Verilog HDL or VHDL warning at buffer3.vhd(37): object "shifter" assigned a value but never read File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/buffer3.vhd Line: 37
 Info (12128): Elaborating entity "Shifter" for hierarchy "Shifter:inst2"
 Warning (10492): VHDL Process Statement warning at Shifter.vhd(28): signal "FIFO_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 28
 Warning (10492): VHDL Process Statement warning at Shifter.vhd(34): signal "FIFO_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 34
@@ -747,23 +770,23 @@ Info (10041): Inferred latch for "buffer1[140]" at Shifter.vhd(25) File: C:/User
 Info (10041): Inferred latch for "buffer1[141]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
 Info (10041): Inferred latch for "buffer1[142]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
 Info (10041): Inferred latch for "buffer1[143]" at Shifter.vhd(25) File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/Shifter.vhd Line: 25
-Info (12128): Elaborating entity "FIFO_CONFIG" for hierarchy "FIFO_CONFIG:inst1"
-Warning (10540): VHDL Signal Declaration warning at FIFO_CONFIG.vhd(24): used explicit default value for signal "MAX" because signal was never assigned a value File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 24
-Warning (10034): Output port "OUTPUT[5..4]" at FIFO_CONFIG.vhd(14) has no driver File: C:/Users/George/Desktop/New folder (2)/FPGA Code/VHDL Code/FIFO_CONFIG.vhd Line: 14
+Info (12128): Elaborating entity "Finale" for hierarchy "Finale:inst3"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "OUTPUTCHECK[5]" is stuck at GND
-    Warning (13410): Pin "OUTPUTCHECK[4]" is stuck at GND
+    Warning (13410): Pin "FIFO_OUT[5]" is stuck at GND
+    Warning (13410): Pin "FIFO_OUT[4]" is stuck at GND
+    Warning (13410): Pin "OUTPUTb[5]" is stuck at VCC
+    Warning (13410): Pin "OUTPUTb[4]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1157 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 956 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
-    Info (21059): Implemented 137 output pins
-    Info (21061): Implemented 999 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 714 megabytes
-    Info: Processing ended: Mon May 14 20:00:31 2018
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 907 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 722 megabytes
+    Info: Processing ended: Wed May 16 16:46:16 2018
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:25
 
 
